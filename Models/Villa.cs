@@ -1,6 +1,6 @@
 using System;
 
-namespace RESTAPIProject.Models
+namespace RESTAPIProject.Models.Villa
 {
     public class Villa
     {
