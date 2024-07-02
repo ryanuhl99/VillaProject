@@ -1,20 +1,18 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
-using RESTAPIProject.Models.Villa;
+using RESTAPIProject.Models.VillaDTO;
+using RESTAPIProject.Data.VillaStore;
 
 namespace RESTAPIProject.Controllers.VillaController
 {   
-    [Route("api/VillaApi")]
+    [Route("api/[controller]")]
     [ApiController]
     public class VillaApiController : ControllerBase
     {
         [HttpGet]
-        public IEnumerable<Villa> GetVilla()
+        public IEnumerable<VillaDTO> GetVilla()
         {
-            return new List<Villa> {
-                new Villa { Id=1, Name="Pool View" },
-                new Villa { Id=2, Name="Ocean View" }
-            };
+            return VillaStore.villaList;
         }
     }
 }
