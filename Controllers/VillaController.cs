@@ -2,6 +2,10 @@ using System;
 using Microsoft.AspNetCore.Mvc;
 using RESTAPIProject.Models.VillaDTO;
 using RESTAPIProject.Data.VillaStore;
+using RESTAPIProject.Validation.ValidationAttributes;
+using System.Linq;
+using RESTAPIProject.Models.CreateVillaDTO;
+
 
 namespace RESTAPIProject.Controllers.VillaController
 {   
@@ -16,7 +20,7 @@ namespace RESTAPIProject.Controllers.VillaController
             return Ok(VillaStore.villaList);
         }
 
-        [HttpGet("ByIDorName")]
+        [HttpGet("ByIDorName", Name = "Get Villa")]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
@@ -47,24 +51,24 @@ namespace RESTAPIProject.Controllers.VillaController
         }
 
         [HttpPost]
-        [ProducesResponseType(200)]
+        [ProducesResponseType(201)]
         [ProducesResponseType(400)]
         [ProducesResponseType(409)]
-        public ActionResult<VillaDTO> CreateVilla(string name)
+        public ActionResult<VillaDTO> CreateVilla([FromBody] CreateVillaRequest request)
         {
-            if (string.IsNullOrEmpty(name))
+            if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
-            if (VillaStore.villaList.Any(x => x.Name.Equals(name, StringComparison.OrdinalIgnoreCase)))
+            if (VillaStore.villaList.Any(x => x.Name.Equals(request.Name, StringComparison.OrdinalIgnoreCase)))
             {
                 return Conflict(new { message = "This name already exists in the database" });
             }
                         
-            int villaId = VillaStore.villaList.Any() ? VillaStore.villaList.Max(x => x.Id) : 1;
-            var newVilla = new VillaDTO { Id=villaId, Name=name };
+            int villaId = VillaStore.villaList.Any() ? VillaStore.villaList.Max(x => x.Id) + 1 : 1;
+            var newVilla = new VillaDTO { Id=villaId, Name=request.Name };
             VillaStore.villaList.Add(newVilla);
-            return Ok(newVilla);        
+            return CreatedAtRoute("Get Villa", new { id = newVilla.Id, name = newVilla.Name }, newVilla);        
         }
     }
 }
