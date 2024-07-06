@@ -11,5 +11,9 @@ namespace RESTAPIProject.Models.CreateVillaDTO
         [MinLength(6)]
         [NonNumericSymbolic]
         public string? Name { get; set; }
+
+        [Range (1, 100)]
+        public int? Occupancy { get; set; }
+
     }
 }

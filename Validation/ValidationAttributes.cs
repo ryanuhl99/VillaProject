@@ -10,16 +10,14 @@ namespace RESTAPIProject.Validation.ValidationAttributes
         {
             if (value is string strValue)
             {
-                var regex = new Regex(@"[\d`~!@#$%^&*-_=+{};:'?/.>,<()]");
+                var regex = new Regex(@"[\d`~!@#$%^&*()\-_=+{};:'?/.>,<]");
                 if (regex.IsMatch(strValue))
                 {
                     return new ValidationResult("Names with special characters are invalid");
                 }
-
-                return ValidationResult.Success;
             }
 
-            return new ValidationResult("The Name input was not a valid string.");
+            return ValidationResult.Success;
         }
     }
 }
