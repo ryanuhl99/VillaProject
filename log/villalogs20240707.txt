@@ -1,0 +1,469 @@
+2024-07-07 01:15:03.235 -07:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-07-07 01:15:03.598 -07:00 [DBG] Entity Framework Core 8.0.6 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.6' with options: None
+2024-07-07 01:15:04.013 -07:00 [DBG] 'ApplicationDbContext' disposed.
+2024-07-07 01:19:59.091 -07:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-07-07 01:19:59.455 -07:00 [DBG] Entity Framework Core 8.0.6 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.6' with options: None
+2024-07-07 01:19:59.467 -07:00 [DBG] Creating DbConnection.
+2024-07-07 01:19:59.492 -07:00 [DBG] 'ApplicationDbContext' disposed.
+2024-07-07 01:23:45.091 -07:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-07-07 01:23:45.447 -07:00 [DBG] Entity Framework Core 8.0.6 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.6' with options: None
+2024-07-07 01:23:45.459 -07:00 [DBG] Creating DbConnection.
+2024-07-07 01:23:45.484 -07:00 [DBG] Created DbConnection. (23ms).
+2024-07-07 01:23:45.486 -07:00 [DBG] Migrating using database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.489 -07:00 [DBG] Opening connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.615 -07:00 [DBG] Opened connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.618 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-07-07 01:23:45.623 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (3ms).
+2024-07-07 01:23:45.624 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (6ms).
+2024-07-07 01:23:45.628 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-07 01:23:45.645 -07:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-07 01:23:45.646 -07:00 [DBG] Closing connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.651 -07:00 [DBG] Closed connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE' (3ms).
+2024-07-07 01:23:45.653 -07:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2024-07-07 01:23:45.653 -07:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2024-07-07 01:23:45.653 -07:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2024-07-07 01:23:45.653 -07:00 [DBG] Opening connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.653 -07:00 [DBG] Opened connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.654 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-07-07 01:23:45.662 -07:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-07-07 01:23:45.662 -07:00 [DBG] Closing connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.663 -07:00 [DBG] Closed connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE' (0ms).
+2024-07-07 01:23:45.663 -07:00 [DBG] Opening connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.663 -07:00 [DBG] Opened connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.663 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-07-07 01:23:45.663 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2024-07-07 01:23:45.663 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2024-07-07 01:23:45.663 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-07 01:23:45.664 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-07 01:23:45.664 -07:00 [DBG] Closing connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.664 -07:00 [DBG] Closed connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE' (0ms).
+2024-07-07 01:23:45.713 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-07-07 01:23:45.713 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2024-07-07 01:23:45.713 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2024-07-07 01:23:45.713 -07:00 [DBG] Opening connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.713 -07:00 [DBG] Opened connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.713 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2024-07-07 01:23:45.723 -07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2024-07-07 01:23:45.723 -07:00 [DBG] Closing connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.723 -07:00 [DBG] Closed connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE' (0ms).
+2024-07-07 01:23:45.723 -07:00 [DBG] Opening connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.723 -07:00 [DBG] Opened connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.723 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-07-07 01:23:45.723 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2024-07-07 01:23:45.723 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2024-07-07 01:23:45.723 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-07 01:23:45.724 -07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-07 01:23:45.724 -07:00 [DBG] Closing connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.724 -07:00 [DBG] Closed connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE' (0ms).
+2024-07-07 01:23:45.724 -07:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2024-07-07 01:23:45.724 -07:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2024-07-07 01:23:45.724 -07:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2024-07-07 01:23:45.724 -07:00 [DBG] Opening connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.724 -07:00 [DBG] Opened connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.724 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-07-07 01:23:45.725 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-07-07 01:23:45.725 -07:00 [DBG] Closing connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.725 -07:00 [DBG] Closed connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE' (0ms).
+2024-07-07 01:23:45.726 -07:00 [DBG] Opening connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.726 -07:00 [DBG] Opened connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.726 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-07-07 01:23:45.726 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2024-07-07 01:23:45.726 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2024-07-07 01:23:45.726 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-07-07 01:23:45.733 -07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-07-07 01:23:45.734 -07:00 [DBG] Closing data reader to 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.735 -07:00 [DBG] A data reader for 'MagicVilla' on server 'DESKTOP-04IGTRE' is being disposed after spending 1ms reading results.
+2024-07-07 01:23:45.735 -07:00 [DBG] Closing connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.735 -07:00 [DBG] Closed connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE' (0ms).
+2024-07-07 01:23:45.741 -07:00 [INF] Applying migration '20240707081503_AddVillaTable'.
+2024-07-07 01:23:45.751 -07:00 [DBG] Opening connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.751 -07:00 [DBG] Opened connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.752 -07:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2024-07-07 01:23:45.757 -07:00 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2024-07-07 01:23:45.757 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-07-07 01:23:45.758 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2024-07-07 01:23:45.758 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2024-07-07 01:23:45.758 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Villas] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [Details] nvarchar(max) NULL,
+    [Rate] float NULL,
+    [Sqft] int NULL,
+    [Occupancy] int NULL,
+    [ImageUrl] nvarchar(max) NULL,
+    [Amenity] nvarchar(max) NULL,
+    [CreatedDate] datetime2 NULL,
+    [UpdatedDate] datetime2 NULL,
+    CONSTRAINT [PK_Villas] PRIMARY KEY ([Id])
+);
+2024-07-07 01:23:45.762 -07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Villas] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [Details] nvarchar(max) NULL,
+    [Rate] float NULL,
+    [Sqft] int NULL,
+    [Occupancy] int NULL,
+    [ImageUrl] nvarchar(max) NULL,
+    [Amenity] nvarchar(max) NULL,
+    [CreatedDate] datetime2 NULL,
+    [UpdatedDate] datetime2 NULL,
+    CONSTRAINT [PK_Villas] PRIMARY KEY ([Id])
+);
+2024-07-07 01:23:45.763 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-07-07 01:23:45.763 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2024-07-07 01:23:45.763 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2024-07-07 01:23:45.763 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240707081503_AddVillaTable', N'8.0.6');
+2024-07-07 01:23:45.764 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240707081503_AddVillaTable', N'8.0.6');
+2024-07-07 01:23:45.765 -07:00 [DBG] Committing transaction.
+2024-07-07 01:23:45.768 -07:00 [DBG] Committed transaction.
+2024-07-07 01:23:45.769 -07:00 [DBG] Disposing transaction.
+2024-07-07 01:23:45.769 -07:00 [DBG] Closing connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.769 -07:00 [DBG] Closed connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE' (0ms).
+2024-07-07 01:23:45.770 -07:00 [DBG] 'ApplicationDbContext' disposed.
+2024-07-07 01:23:45.771 -07:00 [DBG] Disposing connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 01:23:45.771 -07:00 [DBG] Disposed connection to database '' on server '' (0ms).
+2024-07-07 13:50:56.387 -07:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-07-07 13:55:23.754 -07:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-07-07 13:56:36.560 -07:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-07-07 13:56:36.916 -07:00 [DBG] Entity Framework Core 8.0.6 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.6' with options: None
+2024-07-07 13:56:37.327 -07:00 [DBG] 'ApplicationDbContext' disposed.
+2024-07-07 13:57:48.765 -07:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-07-07 13:57:49.108 -07:00 [DBG] Entity Framework Core 8.0.6 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.6' with options: None
+2024-07-07 13:57:49.119 -07:00 [DBG] Creating DbConnection.
+2024-07-07 13:57:49.144 -07:00 [DBG] Created DbConnection. (22ms).
+2024-07-07 13:57:49.146 -07:00 [DBG] Migrating using database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.149 -07:00 [DBG] Opening connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.266 -07:00 [DBG] Opened connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.269 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-07-07 13:57:49.273 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (3ms).
+2024-07-07 13:57:49.274 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (6ms).
+2024-07-07 13:57:49.278 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-07 13:57:49.294 -07:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-07 13:57:49.295 -07:00 [DBG] Closing connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.301 -07:00 [DBG] Closed connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE' (3ms).
+2024-07-07 13:57:49.302 -07:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2024-07-07 13:57:49.302 -07:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2024-07-07 13:57:49.302 -07:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2024-07-07 13:57:49.302 -07:00 [DBG] Opening connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.303 -07:00 [DBG] Opened connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.303 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-07-07 13:57:49.316 -07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-07-07 13:57:49.316 -07:00 [DBG] Closing connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.316 -07:00 [DBG] Closed connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE' (0ms).
+2024-07-07 13:57:49.316 -07:00 [DBG] Opening connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.316 -07:00 [DBG] Opened connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.316 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-07-07 13:57:49.316 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2024-07-07 13:57:49.316 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2024-07-07 13:57:49.316 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-07 13:57:49.317 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-07 13:57:49.317 -07:00 [DBG] Closing connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.317 -07:00 [DBG] Closed connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE' (0ms).
+2024-07-07 13:57:49.317 -07:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2024-07-07 13:57:49.317 -07:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2024-07-07 13:57:49.317 -07:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2024-07-07 13:57:49.318 -07:00 [DBG] Opening connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.318 -07:00 [DBG] Opened connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.318 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-07-07 13:57:49.318 -07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-07-07 13:57:49.318 -07:00 [DBG] Closing connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.318 -07:00 [DBG] Closed connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE' (0ms).
+2024-07-07 13:57:49.330 -07:00 [DBG] Opening connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.330 -07:00 [DBG] Opened connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.330 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-07-07 13:57:49.330 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2024-07-07 13:57:49.330 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2024-07-07 13:57:49.330 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-07-07 13:57:49.338 -07:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-07-07 13:57:49.340 -07:00 [DBG] Closing data reader to 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.340 -07:00 [DBG] A data reader for 'MagicVilla' on server 'DESKTOP-04IGTRE' is being disposed after spending 1ms reading results.
+2024-07-07 13:57:49.340 -07:00 [DBG] Closing connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.340 -07:00 [DBG] Closed connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE' (0ms).
+2024-07-07 13:57:49.347 -07:00 [INF] Applying migration '20240707205637_SeedVillaTable'.
+2024-07-07 13:57:49.380 -07:00 [DBG] Executing 42 update commands as a batch.
+2024-07-07 13:57:49.388 -07:00 [DBG] Executing 42 update commands as a batch.
+2024-07-07 13:57:49.388 -07:00 [DBG] Executing 15 update commands as a batch.
+2024-07-07 13:57:49.390 -07:00 [DBG] Opening connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.390 -07:00 [DBG] Opened connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.391 -07:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2024-07-07 13:57:49.394 -07:00 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2024-07-07 13:57:49.395 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-07-07 13:57:49.395 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2024-07-07 13:57:49.396 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2024-07-07 13:57:49.396 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Amenity', N'CreatedDate', N'Details', N'ImageUrl', N'Name', N'Occupancy', N'Rate', N'Sqft', N'UpdatedDate') AND [object_id] = OBJECT_ID(N'[Villas]'))
+    SET IDENTITY_INSERT [Villas] ON;
+INSERT INTO [Villas] ([Id], [Amenity], [CreatedDate], [Details], [ImageUrl], [Name], [Occupancy], [Rate], [Sqft], [UpdatedDate])
+VALUES (-99, N'', '2024-07-07T13:56:36.9330640-07:00', N'CZOWMFVDKPMXB', N'', N'XNREPI Villa', 94, 567.80999999999995E0, 7586, NULL),
+(-98, N'', '2024-07-07T13:56:36.9330626-07:00', N'DUUHMDVMSPFWOQPW', N'', N'IKKY Villa', 58, 240.28999999999999E0, 45431, NULL),
+(-97, N'', '2024-07-07T13:56:36.9330611-07:00', N'GL A JEMSFBKLF', N'', N'SFQCCG Villa', 42, 524.73000000000002E0, 7649, NULL),
+(-96, N'', '2024-07-07T13:56:36.9330596-07:00', N'IXHUKGFARTDMSKMLM', N'', N'OMF Villa', 85, 634.83000000000004E0, 37136, NULL),
+(-95, N'', '2024-07-07T13:56:36.9330581-07:00', N'DKITLZMMQNC', N'', N'ZUQ Villa', 32, 313.58999999999997E0, 15497, NULL),
+(-94, N'', '2024-07-07T13:56:36.9330569-07:00', N'KETAKQVWH YBAJY', N'', N'RPIZC Villa', 35, 179.19999999999999E0, 5972, NULL),
+(-93, N'', '2024-07-07T13:56:36.9330555-07:00', N'BALFFBECTDFJ ', N'', N'LTI Villa', 2, 848.74000000000001E0, 20471, NULL),
+(-92, N'', '2024-07-07T13:56:36.9330542-07:00', N'FHEFEQKSJQQCFFUHRBZ', N'', N'QJHD Villa', 35, 474.07999999999998E0, 45369, NULL),
+(-91, N'', '2024-07-07T13:56:36.9330526-07:00', N'XKHUPMUQNUYMP', N'', N'GAI Villa', 59, 680.46000000000004E0, 18380, NULL),
+(-90, N'', '2024-07-07T13:56:36.9330513-07:00', N'DCEDPHGCQPFXKJTXS', N'', N'HCZCPUY Villa', 35, 520.39999999999998E0, 8183, NULL),
+(-89, N'', '2024-07-07T13:56:36.9330497-07:00', N'PEFXRYQIPFA', N'', N'BQKCOBA Villa', 22, 284.62E0, 24398, NULL),
+(-88, N'', '2024-07-07T13:56:36.9330460-07:00', N'UKRNWVYJCCZV', N'', N'LBCNBT Villa', 45, 463.75E0, 39884, NULL),
+(-87, N'', '2024-07-07T13:56:36.9330446-07:00', N'TXDYWFBPGBKC ', N'', N'JFOXZI Villa', 62, 768.09000000000003E0, 5640, NULL),
+(-86, N'', '2024-07-07T13:56:36.9330431-07:00', N'WB BQTCRUPRQLHAHV', N'', N'ZT Villa', 78, 590.37E0, 43105, NULL),
+(-85, N'', '2024-07-07T13:56:36.9330417-07:00', N'KBIHCK QRHYHVHWF', N'', N'NV Villa', 76, 957.30999999999995E0, 32231, NULL),
+(-84, N'', '2024-07-07T13:56:36.9330403-07:00', N' IHHSZWCUXWTDAH', N'', N'STAK Villa', 33, 858.00999999999999E0, 8717, NULL),
+(-83, N'', '2024-07-07T13:56:36.9330388-07:00', N'BCQRMSHHGTKQQTBCPUA', N'', N'XSAXIL Villa', 54, 391.22000000000003E0, 35749, NULL),
+(-82, N'', '2024-07-07T13:56:36.9330372-07:00', N'OJNIQNFVAQYJQLLJ', N'', N'AW Villa', 77, 921.58000000000004E0, 35845, NULL),
+(-81, N'', '2024-07-07T13:56:36.9330358-07:00', N'UJJKJQUSHR', N'', N'FBTWZZ Villa', 29, 280.0E0, 14252, NULL),
+(-80, N'', '2024-07-07T13:56:36.9330345-07:00', N'KNDSULWEIKTFKV', N'', N'YRTV Villa', 90, 718.64999999999998E0, 18088, NULL),
+(-79, N'', '2024-07-07T13:56:36.9330331-07:00', N' MQYEITQNWVTQGHY', N'', N'LIOB Villa', 85, 324.75E0, 18470, NULL),
+(-78, N'', '2024-07-07T13:56:36.9330317-07:00', N'USWRLQXMSP', N'', N'GNXRQIP Villa', 9, 486.79000000000002E0, 27759, NULL),
+(-77, N'', '2024-07-07T13:56:36.9330280-07:00', N'DXWOFZWAZDIEVGMMZNO', N'', N'SRHKCNX Villa', 4, 998.46000000000004E0, 7164, NULL),
+(-76, N'', '2024-07-07T13:56:36.9330264-07:00', N'DVGHO ITVVX', N'', N'OWOQCL Villa', 70, 844.22000000000003E0, 28968, NULL),
+(-75, N'', '2024-07-07T13:56:36.9330251-07:00', N'XODJIQDFTDCMCRNAPOQ', N'', N'NF Villa', 50, 717.34000000000003E0, 8926, NULL),
+(-74, N'', '2024-07-07T13:56:36.9330237-07:00', N'FTVPXWUVFR', N'', N'YY Villa', 56, 872.57000000000005E0, 10729, NULL),
+(-73, N'', '2024-07-07T13:56:36.9330226-07:00', N'GSSFXMCBRSHDE', N'', N'TJXVUKR Villa', 53, 935.05999999999995E0, 24238, NULL),
+(-72, N'', '2024-07-07T13:56:36.9330213-07:00', N'VCKAOMAKNR', N'', N'AHHRJR Villa', 28, 971.26999999999998E0, 22659, NULL),
+(-71, N'', '2024-07-07T13:56:36.9330200-07:00', N'QNVAJRV JEBGPZ YU', N'', N'YVHSVIO Villa', 48, 284.82999999999998E0, 25511, NULL),
+(-70, N'', '2024-07-07T13:56:36.9330184-07:00', N'ULCZBHRYJXZRCZYM', N'', N'ZSHGY Villa', 52, 366.06999999999999E0, 38552, NULL),
+(-69, N'', '2024-07-07T13:56:36.9330169-07:00', N'YVGQBFWP JCID', N'', N'HNIY Villa', 68, 573.88999999999999E0, 41433, NULL),
+(-68, N'', '2024-07-07T13:56:36.9330156-07:00', N'CGOZG  PVJNMNM', N'', N'LKUYOWN Villa', 23, 997.08000000000004E0, 15803, NULL),
+(-67, N'', '2024-07-07T13:56:36.9330141-07:00', N'FMIIQZPPCF EHY', N'', N'XEAA Villa', 15, 687.36000000000001E0, 36897, NULL),
+(-66, N'', '2024-07-07T13:56:36.9330126-07:00', N'ZJFAVRS IMX HT', N'', N'RR Villa', 71, 289.67000000000002E0, 2820, NULL),
+(-65, N'', '2024-07-07T13:56:36.9330089-07:00', N'IH RNJQLFRD BCKDO', N'', N'KNXFP Villa', 97, 475.73000000000002E0, 1534, NULL),
+(-64, N'', '2024-07-07T13:56:36.9330074-07:00', N'VIH NUVKJYBNBJSQBR', N'', N'LIA Villa', 34, 804.15999999999997E0, 47341, NULL),
+(-63, N'', '2024-07-07T13:56:36.9330060-07:00', N'BTFOMO ATQSMJNFB', N'', N'ZOPBGWH Villa', 90, 884.96000000000004E0, 7658, NULL),
+(-62, N'', '2024-07-07T13:56:36.9330045-07:00', N'XYOPQMEAHYPRKT', N'', N'GA Villa', 66, 609.10000000000002E0, 12176, NULL),
+(-61, N'', '2024-07-07T13:56:36.9330032-07:00', N'BMA WQJULJJSJJKIW ', N'', N'BFAOA Villa', 99, 230.25999999999999E0, 32451, NULL),
+(-60, N'', '2024-07-07T13:56:36.9330016-07:00', N'XIMPWKWGDZZQV', N'', N'QCOT Villa', 53, 307.77999999999997E0, 41102, NULL),
+(-59, N'', '2024-07-07T13:56:36.9330003-07:00', N'FJNRMVASZWZJEVLUWRF', N'', N'YIHJRKN Villa', 68, 247.91E0, 35138, NULL),
+(-58, N'', '2024-07-07T13:56:36.9329985-07:00', N'USAPMUCLWTZMXNXNM', N'', N'RQIG Villa', 75, 240.22E0, 22908, NULL);
+INSERT INTO [Villas] ([Id], [Amenity], [CreatedDate], [Details], [ImageUrl], [Name], [Occupancy], [Rate], [Sqft], [UpdatedDate])
+VALUES (-57, N'', '2024-07-07T13:56:36.9329970-07:00', N'XSVUFA TIJKCXOLTFAN', N'', N'AENDKT Villa', 54, 181.08000000000001E0, 22608, NULL),
+(-56, N'', '2024-07-07T13:56:36.9329930-07:00', N'JTONNHWXRCUUWFSGUL', N'', N'FPK Villa', 23, 469.01999999999998E0, 47190, NULL),
+(-55, N'', '2024-07-07T13:56:36.9329915-07:00', N'XMYASITMTTQIVJBPCF', N'', N'MSCWOJM Villa', 41, 933.62E0, 25904, NULL),
+(-54, N'', '2024-07-07T13:56:36.9329898-07:00', N'XQHUJWN JYMIEC', N'', N'LUYB Villa', 51, 872.19000000000005E0, 20385, NULL),
+(-53, N'', '2024-07-07T13:56:36.9329885-07:00', N'HM NLONIYODBXDJ', N'', N'ID Villa', 90, 945.90999999999997E0, 7094, NULL),
+(-52, N'', '2024-07-07T13:56:36.9329873-07:00', N'MUUNRIECSIC OWKLTO', N'', N'OBMWY Villa', 64, 443.05000000000001E0, 43781, NULL),
+(-51, N'', '2024-07-07T13:56:36.9329857-07:00', N'MBIGNHTWGZOYMRH', N'', N'GXP Villa', 44, 557.35000000000002E0, 29287, NULL),
+(-50, N'', '2024-07-07T13:56:36.9329844-07:00', N'MJRZKGKS WCF', N'', N'CH Villa', 73, 234.30000000000001E0, 7401, NULL),
+(-49, N'', '2024-07-07T13:56:36.9329833-07:00', N'ZLRAUXCVNUHR', N'', N'RMSFR Villa', 58, 598.25E0, 36861, NULL),
+(-48, N'', '2024-07-07T13:56:36.9329819-07:00', N' CLEKKEESIZMWZ', N'', N'QD Villa', 4, 563.32000000000005E0, 13495, NULL),
+(-47, N'', '2024-07-07T13:56:36.9329806-07:00', N'FUSRUQGYAOGFY', N'', N'KW Villa', 12, 144.71000000000001E0, 37953, NULL),
+(-46, N'', '2024-07-07T13:56:36.9329793-07:00', N'GZUUY SRTX', N'', N'UK Villa', 78, 154.74000000000001E0, 35523, NULL),
+(-45, N'', '2024-07-07T13:56:36.9329783-07:00', N'PNALABFLQVUBBKVLNS', N'', N'FWDK Villa', 2, 489.77999999999997E0, 36058, NULL),
+(-44, N'', '2024-07-07T13:56:36.9329732-07:00', N'UZSQWLGYCKE', N'', N'PDSJM Villa', 95, 713.91999999999996E0, 45834, NULL),
+(-43, N'', '2024-07-07T13:56:36.9329719-07:00', N'VTN WYEKVPPLJRVW', N'', N'NFDTMU Villa', 56, 725.14999999999998E0, 4683, NULL),
+(-42, N'', '2024-07-07T13:56:36.9329704-07:00', N'QQYKJIRH S LN', N'', N'YYR Villa', 59, 684.61000000000001E0, 22074, NULL),
+(-41, N'', '2024-07-07T13:56:36.9329691-07:00', N'IRJBKALHPZUIRHVGIOQ', N'', N'PQBNEK Villa', 28, 492.14999999999998E0, 26085, NULL),
+(-40, N'', '2024-07-07T13:56:36.9329675-07:00', N'ZZNDWZDYHO', N'', N'AV Villa', 51, 571.33000000000004E0, 37634, NULL),
+(-39, N'', '2024-07-07T13:56:36.9329664-07:00', N'TC NOUEWBG MSRAG', N'', N'BCH Villa', 4, 431.91000000000003E0, 11586, NULL),
+(-38, N'', '2024-07-07T13:56:36.9329650-07:00', N'ISIVMGGCDMDVWUNSFG', N'', N'XRZ Villa', 33, 343.17000000000002E0, 26048, NULL),
+(-37, N'', '2024-07-07T13:56:36.9329635-07:00', N'CYSMUJ FOQRTAY QRA', N'', N'LXWBAW Villa', 72, 349.74000000000001E0, 15365, NULL),
+(-36, N'', '2024-07-07T13:56:36.9329619-07:00', N'MVHDJRRUWDBWQNOJQ', N'', N'HXXMEPZ Villa', 51, 789.70000000000005E0, 7688, NULL),
+(-35, N'', '2024-07-07T13:56:36.9329602-07:00', N'OCXMEFCPXVCSRSZXG', N'', N'TCDCWKO Villa', 58, 842.26999999999998E0, 5030, NULL),
+(-34, N'', '2024-07-07T13:56:36.9329586-07:00', N'ZECRUV W ZUP', N'', N'FBMBX Villa', 37, 125.81999999999999E0, 41530, NULL),
+(-33, N'', '2024-07-07T13:56:36.9329515-07:00', N'OTLKQBCAJGNAAVWFYAC', N'', N'TDTLI Villa', 44, 396.47000000000003E0, 15077, NULL),
+(-32, N'', '2024-07-07T13:56:36.9329498-07:00', N'OHMRNGGR JB', N'', N'SNBE Villa', 56, 549.66999999999996E0, 33065, NULL),
+(-31, N'', '2024-07-07T13:56:36.9329487-07:00', N'FBZOHZFCPCUATGI', N'', N'UTX Villa', 11, 655.45000000000005E0, 31277, NULL),
+(-30, N'', '2024-07-07T13:56:36.9329474-07:00', N'EIEDJVZIXCW', N'', N'NICL Villa', 5, 362.58999999999997E0, 30154, NULL),
+(-29, N'', '2024-07-07T13:56:36.9329461-07:00', N'TYBPCCNYWMNWWGPMIT', N'', N'AKWP Villa', 14, 124.67E0, 32869, NULL),
+(-28, N'', '2024-07-07T13:56:36.9329446-07:00', N'TAIQNKVCESSRNE', N'', N'XDUVBHA Villa', 92, 822.82000000000005E0, 46358, NULL),
+(-27, N'', '2024-07-07T13:56:36.9329431-07:00', N'X OENFVVJHVYTKICRG', N'', N'LXED Villa', 83, 361.60000000000002E0, 38682, NULL),
+(-26, N'', '2024-07-07T13:56:36.9329416-07:00', N'NCQUUXHPRIXP EDU', N'', N'KACZV Villa', 26, 878.86000000000001E0, 11301, NULL),
+(-25, N'', '2024-07-07T13:56:36.9329400-07:00', N'RQZH CAIXAA', N'', N'RZSYMZZ Villa', 56, 482.94E0, 9008, NULL),
+(-24, N'', '2024-07-07T13:56:36.9329387-07:00', N'VXKDGOPQCNUANXVJRMB', N'', N'MXLA Villa', 78, 844.65999999999997E0, 2388, NULL),
+(-23, N'', '2024-07-07T13:56:36.9329372-07:00', N'GUIWCUXZHFYFHUZ UQC', N'', N'LN Villa', 30, 816.67999999999995E0, 43259, NULL),
+(-22, N'', '2024-07-07T13:56:36.9329342-07:00', N'SODMZVONKFQE', N'', N'JVO Villa', 93, 494.16000000000003E0, 49399, NULL),
+(-21, N'', '2024-07-07T13:56:36.9329329-07:00', N'LRZEGDHVTJRB', N'', N'QJKQRK Villa', 86, 786.94000000000005E0, 30836, NULL),
+(-20, N'', '2024-07-07T13:56:36.9329315-07:00', N'WAHCVATZ XWOAOUG', N'', N'XQSJCD Villa', 62, 786.66999999999996E0, 6496, NULL),
+(-19, N'', '2024-07-07T13:56:36.9329300-07:00', N'SXHBHFOXROICFP', N'', N'NEYNTI Villa', 73, 317.55000000000001E0, 46774, NULL),
+(-18, N'', '2024-07-07T13:56:36.9329284-07:00', N'MGC LHBEPENNL', N'', N'HA Villa', 90, 222.38E0, 18539, NULL),
+(-17, N'', '2024-07-07T13:56:36.9329270-07:00', N'WUFBVGMKMHOJOLR', N'', N'YIDMFX Villa', 90, 633.91999999999996E0, 6253, NULL),
+(-16, N'', '2024-07-07T13:56:36.9329256-07:00', N'YHRXOYAIWOE', N'', N'CDM Villa', 16, 390.26999999999998E0, 26195, NULL);
+INSERT INTO [Villas] ([Id], [Amenity], [CreatedDate], [Details], [ImageUrl], [Name], [Occupancy], [Rate], [Sqft], [UpdatedDate])
+VALUES (-15, N'', '2024-07-07T13:56:36.9329244-07:00', N'ZNMGASUMPFX', N'', N'MVFMR Villa', 24, 209.66E0, 11803, NULL),
+(-14, N'', '2024-07-07T13:56:36.9329231-07:00', N'JKCGWVMPFSIOZZL', N'', N'XTORA Villa', 32, 164.88999999999999E0, 30250, NULL),
+(-13, N'', '2024-07-07T13:56:36.9329216-07:00', N'HMV WMKBLCMKL', N'', N'NTOCX Villa', 99, 910.73000000000002E0, 49202, NULL),
+(-12, N'', '2024-07-07T13:56:36.9329201-07:00', N'XCQDRME FJOWLVCVX', N'', N'YUXT Villa', 35, 594.95000000000005E0, 31424, NULL),
+(-11, N'', '2024-07-07T13:56:36.9329161-07:00', N'RSFN KPHFJAIUOPQ', N'', N'XKIK Villa', 48, 962.12E0, 863, NULL),
+(-10, N'', '2024-07-07T13:56:36.9329146-07:00', N'EXYJQXEGTXOFIPZEF', N'', N'SLK Villa', 90, 562.13999999999999E0, 28912, NULL),
+(-9, N'', '2024-07-07T13:56:36.9329131-07:00', N'CHKEEKLOCM QRARSYDI', N'', N'DQXHZTS Villa', 46, 751.53999999999996E0, 30529, NULL),
+(-8, N'', '2024-07-07T13:56:36.9329113-07:00', N'WDGAQRQFGGX', N'', N'NON Villa', 84, 865.83000000000004E0, 23948, NULL),
+(-7, N'', '2024-07-07T13:56:36.9329100-07:00', N'VJEU   ZIPPIFBH', N'', N'EFRRKFT Villa', 78, 190.24000000000001E0, 9636, NULL),
+(-6, N'', '2024-07-07T13:56:36.9329084-07:00', N'NXXPFMFOKRSXFXWTJ ', N'', N'FNPY Villa', 22, 192.08000000000001E0, 16378, NULL),
+(-5, N'', '2024-07-07T13:56:36.9329067-07:00', N'VHSJGPKILKGXFD', N'', N'RW Villa', 97, 241.36000000000001E0, 22829, NULL),
+(-4, N'', '2024-07-07T13:56:36.9329053-07:00', N'ZYRAFJEDLTO', N'', N'RARINBN Villa', 45, 401.43000000000001E0, 3701, NULL),
+(-3, N'', '2024-07-07T13:56:36.9329039-07:00', N'PUVBKVSSRFBXSZH ', N'', N'GL Villa', 76, 695.66999999999996E0, 26020, NULL),
+(-2, N'', '2024-07-07T13:56:36.9329023-07:00', N'NBORW ODYOV', N'', N'REW Villa', 28, 773.17999999999995E0, 29141, NULL),
+(-1, N'', '2024-07-07T13:56:36.9328883-07:00', N'SXX XAXIBYJUZYEZCU', N'', N'QIJGLDY Villa', 60, 888.83000000000004E0, 3616, NULL);
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Amenity', N'CreatedDate', N'Details', N'ImageUrl', N'Name', N'Occupancy', N'Rate', N'Sqft', N'UpdatedDate') AND [object_id] = OBJECT_ID(N'[Villas]'))
+    SET IDENTITY_INSERT [Villas] OFF;
+2024-07-07 13:57:49.445 -07:00 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Amenity', N'CreatedDate', N'Details', N'ImageUrl', N'Name', N'Occupancy', N'Rate', N'Sqft', N'UpdatedDate') AND [object_id] = OBJECT_ID(N'[Villas]'))
+    SET IDENTITY_INSERT [Villas] ON;
+INSERT INTO [Villas] ([Id], [Amenity], [CreatedDate], [Details], [ImageUrl], [Name], [Occupancy], [Rate], [Sqft], [UpdatedDate])
+VALUES (-99, N'', '2024-07-07T13:56:36.9330640-07:00', N'CZOWMFVDKPMXB', N'', N'XNREPI Villa', 94, 567.80999999999995E0, 7586, NULL),
+(-98, N'', '2024-07-07T13:56:36.9330626-07:00', N'DUUHMDVMSPFWOQPW', N'', N'IKKY Villa', 58, 240.28999999999999E0, 45431, NULL),
+(-97, N'', '2024-07-07T13:56:36.9330611-07:00', N'GL A JEMSFBKLF', N'', N'SFQCCG Villa', 42, 524.73000000000002E0, 7649, NULL),
+(-96, N'', '2024-07-07T13:56:36.9330596-07:00', N'IXHUKGFARTDMSKMLM', N'', N'OMF Villa', 85, 634.83000000000004E0, 37136, NULL),
+(-95, N'', '2024-07-07T13:56:36.9330581-07:00', N'DKITLZMMQNC', N'', N'ZUQ Villa', 32, 313.58999999999997E0, 15497, NULL),
+(-94, N'', '2024-07-07T13:56:36.9330569-07:00', N'KETAKQVWH YBAJY', N'', N'RPIZC Villa', 35, 179.19999999999999E0, 5972, NULL),
+(-93, N'', '2024-07-07T13:56:36.9330555-07:00', N'BALFFBECTDFJ ', N'', N'LTI Villa', 2, 848.74000000000001E0, 20471, NULL),
+(-92, N'', '2024-07-07T13:56:36.9330542-07:00', N'FHEFEQKSJQQCFFUHRBZ', N'', N'QJHD Villa', 35, 474.07999999999998E0, 45369, NULL),
+(-91, N'', '2024-07-07T13:56:36.9330526-07:00', N'XKHUPMUQNUYMP', N'', N'GAI Villa', 59, 680.46000000000004E0, 18380, NULL),
+(-90, N'', '2024-07-07T13:56:36.9330513-07:00', N'DCEDPHGCQPFXKJTXS', N'', N'HCZCPUY Villa', 35, 520.39999999999998E0, 8183, NULL),
+(-89, N'', '2024-07-07T13:56:36.9330497-07:00', N'PEFXRYQIPFA', N'', N'BQKCOBA Villa', 22, 284.62E0, 24398, NULL),
+(-88, N'', '2024-07-07T13:56:36.9330460-07:00', N'UKRNWVYJCCZV', N'', N'LBCNBT Villa', 45, 463.75E0, 39884, NULL),
+(-87, N'', '2024-07-07T13:56:36.9330446-07:00', N'TXDYWFBPGBKC ', N'', N'JFOXZI Villa', 62, 768.09000000000003E0, 5640, NULL),
+(-86, N'', '2024-07-07T13:56:36.9330431-07:00', N'WB BQTCRUPRQLHAHV', N'', N'ZT Villa', 78, 590.37E0, 43105, NULL),
+(-85, N'', '2024-07-07T13:56:36.9330417-07:00', N'KBIHCK QRHYHVHWF', N'', N'NV Villa', 76, 957.30999999999995E0, 32231, NULL),
+(-84, N'', '2024-07-07T13:56:36.9330403-07:00', N' IHHSZWCUXWTDAH', N'', N'STAK Villa', 33, 858.00999999999999E0, 8717, NULL),
+(-83, N'', '2024-07-07T13:56:36.9330388-07:00', N'BCQRMSHHGTKQQTBCPUA', N'', N'XSAXIL Villa', 54, 391.22000000000003E0, 35749, NULL),
+(-82, N'', '2024-07-07T13:56:36.9330372-07:00', N'OJNIQNFVAQYJQLLJ', N'', N'AW Villa', 77, 921.58000000000004E0, 35845, NULL),
+(-81, N'', '2024-07-07T13:56:36.9330358-07:00', N'UJJKJQUSHR', N'', N'FBTWZZ Villa', 29, 280.0E0, 14252, NULL),
+(-80, N'', '2024-07-07T13:56:36.9330345-07:00', N'KNDSULWEIKTFKV', N'', N'YRTV Villa', 90, 718.64999999999998E0, 18088, NULL),
+(-79, N'', '2024-07-07T13:56:36.9330331-07:00', N' MQYEITQNWVTQGHY', N'', N'LIOB Villa', 85, 324.75E0, 18470, NULL),
+(-78, N'', '2024-07-07T13:56:36.9330317-07:00', N'USWRLQXMSP', N'', N'GNXRQIP Villa', 9, 486.79000000000002E0, 27759, NULL),
+(-77, N'', '2024-07-07T13:56:36.9330280-07:00', N'DXWOFZWAZDIEVGMMZNO', N'', N'SRHKCNX Villa', 4, 998.46000000000004E0, 7164, NULL),
+(-76, N'', '2024-07-07T13:56:36.9330264-07:00', N'DVGHO ITVVX', N'', N'OWOQCL Villa', 70, 844.22000000000003E0, 28968, NULL),
+(-75, N'', '2024-07-07T13:56:36.9330251-07:00', N'XODJIQDFTDCMCRNAPOQ', N'', N'NF Villa', 50, 717.34000000000003E0, 8926, NULL),
+(-74, N'', '2024-07-07T13:56:36.9330237-07:00', N'FTVPXWUVFR', N'', N'YY Villa', 56, 872.57000000000005E0, 10729, NULL),
+(-73, N'', '2024-07-07T13:56:36.9330226-07:00', N'GSSFXMCBRSHDE', N'', N'TJXVUKR Villa', 53, 935.05999999999995E0, 24238, NULL),
+(-72, N'', '2024-07-07T13:56:36.9330213-07:00', N'VCKAOMAKNR', N'', N'AHHRJR Villa', 28, 971.26999999999998E0, 22659, NULL),
+(-71, N'', '2024-07-07T13:56:36.9330200-07:00', N'QNVAJRV JEBGPZ YU', N'', N'YVHSVIO Villa', 48, 284.82999999999998E0, 25511, NULL),
+(-70, N'', '2024-07-07T13:56:36.9330184-07:00', N'ULCZBHRYJXZRCZYM', N'', N'ZSHGY Villa', 52, 366.06999999999999E0, 38552, NULL),
+(-69, N'', '2024-07-07T13:56:36.9330169-07:00', N'YVGQBFWP JCID', N'', N'HNIY Villa', 68, 573.88999999999999E0, 41433, NULL),
+(-68, N'', '2024-07-07T13:56:36.9330156-07:00', N'CGOZG  PVJNMNM', N'', N'LKUYOWN Villa', 23, 997.08000000000004E0, 15803, NULL),
+(-67, N'', '2024-07-07T13:56:36.9330141-07:00', N'FMIIQZPPCF EHY', N'', N'XEAA Villa', 15, 687.36000000000001E0, 36897, NULL),
+(-66, N'', '2024-07-07T13:56:36.9330126-07:00', N'ZJFAVRS IMX HT', N'', N'RR Villa', 71, 289.67000000000002E0, 2820, NULL),
+(-65, N'', '2024-07-07T13:56:36.9330089-07:00', N'IH RNJQLFRD BCKDO', N'', N'KNXFP Villa', 97, 475.73000000000002E0, 1534, NULL),
+(-64, N'', '2024-07-07T13:56:36.9330074-07:00', N'VIH NUVKJYBNBJSQBR', N'', N'LIA Villa', 34, 804.15999999999997E0, 47341, NULL),
+(-63, N'', '2024-07-07T13:56:36.9330060-07:00', N'BTFOMO ATQSMJNFB', N'', N'ZOPBGWH Villa', 90, 884.96000000000004E0, 7658, NULL),
+(-62, N'', '2024-07-07T13:56:36.9330045-07:00', N'XYOPQMEAHYPRKT', N'', N'GA Villa', 66, 609.10000000000002E0, 12176, NULL),
+(-61, N'', '2024-07-07T13:56:36.9330032-07:00', N'BMA WQJULJJSJJKIW ', N'', N'BFAOA Villa', 99, 230.25999999999999E0, 32451, NULL),
+(-60, N'', '2024-07-07T13:56:36.9330016-07:00', N'XIMPWKWGDZZQV', N'', N'QCOT Villa', 53, 307.77999999999997E0, 41102, NULL),
+(-59, N'', '2024-07-07T13:56:36.9330003-07:00', N'FJNRMVASZWZJEVLUWRF', N'', N'YIHJRKN Villa', 68, 247.91E0, 35138, NULL),
+(-58, N'', '2024-07-07T13:56:36.9329985-07:00', N'USAPMUCLWTZMXNXNM', N'', N'RQIG Villa', 75, 240.22E0, 22908, NULL);
+INSERT INTO [Villas] ([Id], [Amenity], [CreatedDate], [Details], [ImageUrl], [Name], [Occupancy], [Rate], [Sqft], [UpdatedDate])
+VALUES (-57, N'', '2024-07-07T13:56:36.9329970-07:00', N'XSVUFA TIJKCXOLTFAN', N'', N'AENDKT Villa', 54, 181.08000000000001E0, 22608, NULL),
+(-56, N'', '2024-07-07T13:56:36.9329930-07:00', N'JTONNHWXRCUUWFSGUL', N'', N'FPK Villa', 23, 469.01999999999998E0, 47190, NULL),
+(-55, N'', '2024-07-07T13:56:36.9329915-07:00', N'XMYASITMTTQIVJBPCF', N'', N'MSCWOJM Villa', 41, 933.62E0, 25904, NULL),
+(-54, N'', '2024-07-07T13:56:36.9329898-07:00', N'XQHUJWN JYMIEC', N'', N'LUYB Villa', 51, 872.19000000000005E0, 20385, NULL),
+(-53, N'', '2024-07-07T13:56:36.9329885-07:00', N'HM NLONIYODBXDJ', N'', N'ID Villa', 90, 945.90999999999997E0, 7094, NULL),
+(-52, N'', '2024-07-07T13:56:36.9329873-07:00', N'MUUNRIECSIC OWKLTO', N'', N'OBMWY Villa', 64, 443.05000000000001E0, 43781, NULL),
+(-51, N'', '2024-07-07T13:56:36.9329857-07:00', N'MBIGNHTWGZOYMRH', N'', N'GXP Villa', 44, 557.35000000000002E0, 29287, NULL),
+(-50, N'', '2024-07-07T13:56:36.9329844-07:00', N'MJRZKGKS WCF', N'', N'CH Villa', 73, 234.30000000000001E0, 7401, NULL),
+(-49, N'', '2024-07-07T13:56:36.9329833-07:00', N'ZLRAUXCVNUHR', N'', N'RMSFR Villa', 58, 598.25E0, 36861, NULL),
+(-48, N'', '2024-07-07T13:56:36.9329819-07:00', N' CLEKKEESIZMWZ', N'', N'QD Villa', 4, 563.32000000000005E0, 13495, NULL),
+(-47, N'', '2024-07-07T13:56:36.9329806-07:00', N'FUSRUQGYAOGFY', N'', N'KW Villa', 12, 144.71000000000001E0, 37953, NULL),
+(-46, N'', '2024-07-07T13:56:36.9329793-07:00', N'GZUUY SRTX', N'', N'UK Villa', 78, 154.74000000000001E0, 35523, NULL),
+(-45, N'', '2024-07-07T13:56:36.9329783-07:00', N'PNALABFLQVUBBKVLNS', N'', N'FWDK Villa', 2, 489.77999999999997E0, 36058, NULL),
+(-44, N'', '2024-07-07T13:56:36.9329732-07:00', N'UZSQWLGYCKE', N'', N'PDSJM Villa', 95, 713.91999999999996E0, 45834, NULL),
+(-43, N'', '2024-07-07T13:56:36.9329719-07:00', N'VTN WYEKVPPLJRVW', N'', N'NFDTMU Villa', 56, 725.14999999999998E0, 4683, NULL),
+(-42, N'', '2024-07-07T13:56:36.9329704-07:00', N'QQYKJIRH S LN', N'', N'YYR Villa', 59, 684.61000000000001E0, 22074, NULL),
+(-41, N'', '2024-07-07T13:56:36.9329691-07:00', N'IRJBKALHPZUIRHVGIOQ', N'', N'PQBNEK Villa', 28, 492.14999999999998E0, 26085, NULL),
+(-40, N'', '2024-07-07T13:56:36.9329675-07:00', N'ZZNDWZDYHO', N'', N'AV Villa', 51, 571.33000000000004E0, 37634, NULL),
+(-39, N'', '2024-07-07T13:56:36.9329664-07:00', N'TC NOUEWBG MSRAG', N'', N'BCH Villa', 4, 431.91000000000003E0, 11586, NULL),
+(-38, N'', '2024-07-07T13:56:36.9329650-07:00', N'ISIVMGGCDMDVWUNSFG', N'', N'XRZ Villa', 33, 343.17000000000002E0, 26048, NULL),
+(-37, N'', '2024-07-07T13:56:36.9329635-07:00', N'CYSMUJ FOQRTAY QRA', N'', N'LXWBAW Villa', 72, 349.74000000000001E0, 15365, NULL),
+(-36, N'', '2024-07-07T13:56:36.9329619-07:00', N'MVHDJRRUWDBWQNOJQ', N'', N'HXXMEPZ Villa', 51, 789.70000000000005E0, 7688, NULL),
+(-35, N'', '2024-07-07T13:56:36.9329602-07:00', N'OCXMEFCPXVCSRSZXG', N'', N'TCDCWKO Villa', 58, 842.26999999999998E0, 5030, NULL),
+(-34, N'', '2024-07-07T13:56:36.9329586-07:00', N'ZECRUV W ZUP', N'', N'FBMBX Villa', 37, 125.81999999999999E0, 41530, NULL),
+(-33, N'', '2024-07-07T13:56:36.9329515-07:00', N'OTLKQBCAJGNAAVWFYAC', N'', N'TDTLI Villa', 44, 396.47000000000003E0, 15077, NULL),
+(-32, N'', '2024-07-07T13:56:36.9329498-07:00', N'OHMRNGGR JB', N'', N'SNBE Villa', 56, 549.66999999999996E0, 33065, NULL),
+(-31, N'', '2024-07-07T13:56:36.9329487-07:00', N'FBZOHZFCPCUATGI', N'', N'UTX Villa', 11, 655.45000000000005E0, 31277, NULL),
+(-30, N'', '2024-07-07T13:56:36.9329474-07:00', N'EIEDJVZIXCW', N'', N'NICL Villa', 5, 362.58999999999997E0, 30154, NULL),
+(-29, N'', '2024-07-07T13:56:36.9329461-07:00', N'TYBPCCNYWMNWWGPMIT', N'', N'AKWP Villa', 14, 124.67E0, 32869, NULL),
+(-28, N'', '2024-07-07T13:56:36.9329446-07:00', N'TAIQNKVCESSRNE', N'', N'XDUVBHA Villa', 92, 822.82000000000005E0, 46358, NULL),
+(-27, N'', '2024-07-07T13:56:36.9329431-07:00', N'X OENFVVJHVYTKICRG', N'', N'LXED Villa', 83, 361.60000000000002E0, 38682, NULL),
+(-26, N'', '2024-07-07T13:56:36.9329416-07:00', N'NCQUUXHPRIXP EDU', N'', N'KACZV Villa', 26, 878.86000000000001E0, 11301, NULL),
+(-25, N'', '2024-07-07T13:56:36.9329400-07:00', N'RQZH CAIXAA', N'', N'RZSYMZZ Villa', 56, 482.94E0, 9008, NULL),
+(-24, N'', '2024-07-07T13:56:36.9329387-07:00', N'VXKDGOPQCNUANXVJRMB', N'', N'MXLA Villa', 78, 844.65999999999997E0, 2388, NULL),
+(-23, N'', '2024-07-07T13:56:36.9329372-07:00', N'GUIWCUXZHFYFHUZ UQC', N'', N'LN Villa', 30, 816.67999999999995E0, 43259, NULL),
+(-22, N'', '2024-07-07T13:56:36.9329342-07:00', N'SODMZVONKFQE', N'', N'JVO Villa', 93, 494.16000000000003E0, 49399, NULL),
+(-21, N'', '2024-07-07T13:56:36.9329329-07:00', N'LRZEGDHVTJRB', N'', N'QJKQRK Villa', 86, 786.94000000000005E0, 30836, NULL),
+(-20, N'', '2024-07-07T13:56:36.9329315-07:00', N'WAHCVATZ XWOAOUG', N'', N'XQSJCD Villa', 62, 786.66999999999996E0, 6496, NULL),
+(-19, N'', '2024-07-07T13:56:36.9329300-07:00', N'SXHBHFOXROICFP', N'', N'NEYNTI Villa', 73, 317.55000000000001E0, 46774, NULL),
+(-18, N'', '2024-07-07T13:56:36.9329284-07:00', N'MGC LHBEPENNL', N'', N'HA Villa', 90, 222.38E0, 18539, NULL),
+(-17, N'', '2024-07-07T13:56:36.9329270-07:00', N'WUFBVGMKMHOJOLR', N'', N'YIDMFX Villa', 90, 633.91999999999996E0, 6253, NULL),
+(-16, N'', '2024-07-07T13:56:36.9329256-07:00', N'YHRXOYAIWOE', N'', N'CDM Villa', 16, 390.26999999999998E0, 26195, NULL);
+INSERT INTO [Villas] ([Id], [Amenity], [CreatedDate], [Details], [ImageUrl], [Name], [Occupancy], [Rate], [Sqft], [UpdatedDate])
+VALUES (-15, N'', '2024-07-07T13:56:36.9329244-07:00', N'ZNMGASUMPFX', N'', N'MVFMR Villa', 24, 209.66E0, 11803, NULL),
+(-14, N'', '2024-07-07T13:56:36.9329231-07:00', N'JKCGWVMPFSIOZZL', N'', N'XTORA Villa', 32, 164.88999999999999E0, 30250, NULL),
+(-13, N'', '2024-07-07T13:56:36.9329216-07:00', N'HMV WMKBLCMKL', N'', N'NTOCX Villa', 99, 910.73000000000002E0, 49202, NULL),
+(-12, N'', '2024-07-07T13:56:36.9329201-07:00', N'XCQDRME FJOWLVCVX', N'', N'YUXT Villa', 35, 594.95000000000005E0, 31424, NULL),
+(-11, N'', '2024-07-07T13:56:36.9329161-07:00', N'RSFN KPHFJAIUOPQ', N'', N'XKIK Villa', 48, 962.12E0, 863, NULL),
+(-10, N'', '2024-07-07T13:56:36.9329146-07:00', N'EXYJQXEGTXOFIPZEF', N'', N'SLK Villa', 90, 562.13999999999999E0, 28912, NULL),
+(-9, N'', '2024-07-07T13:56:36.9329131-07:00', N'CHKEEKLOCM QRARSYDI', N'', N'DQXHZTS Villa', 46, 751.53999999999996E0, 30529, NULL),
+(-8, N'', '2024-07-07T13:56:36.9329113-07:00', N'WDGAQRQFGGX', N'', N'NON Villa', 84, 865.83000000000004E0, 23948, NULL),
+(-7, N'', '2024-07-07T13:56:36.9329100-07:00', N'VJEU   ZIPPIFBH', N'', N'EFRRKFT Villa', 78, 190.24000000000001E0, 9636, NULL),
+(-6, N'', '2024-07-07T13:56:36.9329084-07:00', N'NXXPFMFOKRSXFXWTJ ', N'', N'FNPY Villa', 22, 192.08000000000001E0, 16378, NULL),
+(-5, N'', '2024-07-07T13:56:36.9329067-07:00', N'VHSJGPKILKGXFD', N'', N'RW Villa', 97, 241.36000000000001E0, 22829, NULL),
+(-4, N'', '2024-07-07T13:56:36.9329053-07:00', N'ZYRAFJEDLTO', N'', N'RARINBN Villa', 45, 401.43000000000001E0, 3701, NULL),
+(-3, N'', '2024-07-07T13:56:36.9329039-07:00', N'PUVBKVSSRFBXSZH ', N'', N'GL Villa', 76, 695.66999999999996E0, 26020, NULL),
+(-2, N'', '2024-07-07T13:56:36.9329023-07:00', N'NBORW ODYOV', N'', N'REW Villa', 28, 773.17999999999995E0, 29141, NULL),
+(-1, N'', '2024-07-07T13:56:36.9328883-07:00', N'SXX XAXIBYJUZYEZCU', N'', N'QIJGLDY Villa', 60, 888.83000000000004E0, 3616, NULL);
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Amenity', N'CreatedDate', N'Details', N'ImageUrl', N'Name', N'Occupancy', N'Rate', N'Sqft', N'UpdatedDate') AND [object_id] = OBJECT_ID(N'[Villas]'))
+    SET IDENTITY_INSERT [Villas] OFF;
+2024-07-07 13:57:49.445 -07:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-07-07 13:57:49.445 -07:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2024-07-07 13:57:49.445 -07:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2024-07-07 13:57:49.445 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240707205637_SeedVillaTable', N'8.0.6');
+2024-07-07 13:57:49.446 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240707205637_SeedVillaTable', N'8.0.6');
+2024-07-07 13:57:49.447 -07:00 [DBG] Committing transaction.
+2024-07-07 13:57:49.450 -07:00 [DBG] Committed transaction.
+2024-07-07 13:57:49.450 -07:00 [DBG] Disposing transaction.
+2024-07-07 13:57:49.450 -07:00 [DBG] Closing connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.450 -07:00 [DBG] Closed connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE' (0ms).
+2024-07-07 13:57:49.451 -07:00 [DBG] 'ApplicationDbContext' disposed.
+2024-07-07 13:57:49.452 -07:00 [DBG] Disposing connection to database 'MagicVilla' on server 'DESKTOP-04IGTRE'.
+2024-07-07 13:57:49.453 -07:00 [DBG] Disposed connection to database '' on server '' (0ms).

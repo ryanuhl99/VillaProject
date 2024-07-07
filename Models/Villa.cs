@@ -1,4 +1,8 @@
 using System;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using RESTAPIProject.Validation.ValidationAttributes;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RESTAPIProject.Models.Villa
 {
