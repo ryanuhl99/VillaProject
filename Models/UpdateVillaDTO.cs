@@ -6,8 +6,6 @@ namespace RESTAPIProject.Models.UpdateVillaDTO
 {
     public class UpdateVillaRequest
     {
-        [Required]
-        public int Id { get; set;}
 
         [Required]
         [MaxLength(15)]

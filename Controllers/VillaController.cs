@@ -4,10 +4,13 @@ using RESTAPIProject.Models.VillaDTO;
 using RESTAPIProject.Validation.ValidationAttributes;
 using System.Linq;
 using RESTAPIProject.Models.CreateVillaDTO;
+using RESTAPIProject.Models.UpdateVillaDTO;
 using Microsoft.AspNetCore.JsonPatch;
 using RESTAPIProject.Data.ApplicationDbContext;
 using RESTAPIProject.Models.Villa;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using System.Collections.Generic;
 
 namespace RESTAPIProject.Controllers.VillaController
 {   
@@ -17,10 +20,12 @@ namespace RESTAPIProject.Controllers.VillaController
     {
         private readonly ApplicationDbContext _db;
         private readonly ILogger<VillaApiController> _logger;
-        public VillaApiController(ILogger<VillaApiController> logger, ApplicationDbContext db)
+        private readonly IMapper _mapper;
+        public VillaApiController(ILogger<VillaApiController> logger, ApplicationDbContext db, IMapper mapper)
         {
             _logger = logger;
             _db = db;
+            _mapper = mapper;
         } 
 
         [HttpGet]
@@ -28,7 +33,8 @@ namespace RESTAPIProject.Controllers.VillaController
         public async Task<ActionResult<IEnumerable<VillaDTO>>> GetVillas()
         {
             _logger.LogInformation("Getting All Villas");
-            return Ok(await _db.Villas.ToListAsync());
+            IEnumerable<Villa> villaList = await _db.Villas.ToListAsync();
+            return Ok(_mapper.Map<List<VillaDTO>>(villaList));
         }
 
         [HttpGet("ByIDorName", Name = "Get Villa")]
@@ -80,20 +86,23 @@ namespace RESTAPIProject.Controllers.VillaController
             }
                         
             // int villaId = _db.Villas.Any() ? _db.Villas.Max(x => x.Id) + 1 : 1;
-            var newVilla = new Villa 
-                {   
-                    Name=request.Name,
-                    Details=request.Details,
-                    Occupancy=request.Occupancy,
-                    Sqft=request.Sqft,
-                    Rate=request.Rate,
-                    ImageUrl=request.ImageUrl,
-                    Amenity=request.Amenity 
-                };
-            await _db.Villas.AddAsync(newVilla);
+
+            Villa villacreate = _mapper.Map<Villa>(request);
+
+            // var newVilla = new Villa 
+            //     {   
+            //         Name=request.Name,
+            //         Details=request.Details,
+            //         Occupancy=request.Occupancy,
+            //         Sqft=request.Sqft,
+            //         Rate=request.Rate,
+            //         ImageUrl=request.ImageUrl,
+            //         Amenity=request.Amenity 
+            //     };
+            await _db.Villas.AddAsync(villacreate);
             await _db.SaveChangesAsync();
 
-            return CreatedAtRoute("Get Villa", new { id = newVilla.Id, name = newVilla.Name }, newVilla);        
+            return CreatedAtRoute("Get Villa", new { id = villacreate.Id, name = villacreate.Name }, villacreate);        
         }
 
         [HttpDelete("{id}", Name = "Delete Villa")]
@@ -116,7 +125,7 @@ namespace RESTAPIProject.Controllers.VillaController
         [HttpPut("{id}", Name = "Update Villa")]
         [ProducesResponseType(404)]
         [ProducesResponseType(204)]
-        public async Task<IActionResult> UpdateVilla(int id, [FromBody] CreateVillaRequest request)
+        public async Task<IActionResult> UpdateVilla(int id, [FromBody] UpdateVillaRequest request)
         {
             var villa = await _db.Villas.FindAsync(id);
             if (villa == null)
@@ -127,15 +136,17 @@ namespace RESTAPIProject.Controllers.VillaController
             // villaId.Name = request.Name;
             // villaId.Occupancy = request.Occupancy;
 
-            villa.Name = request.Name;
-            villa.Details = request.Details;
-            villa.Occupancy = request.Occupancy;
-            villa.Sqft = request.Sqft;
-            villa.Rate = request.Rate;
-            villa.ImageUrl = request.ImageUrl;
-            villa.Amenity = request.Amenity; 
+            Villa villaupdate = _mapper.Map<Villa>(request);
+
+            // villa.Name = request.Name;
+            // villa.Details = request.Details;
+            // villa.Occupancy = request.Occupancy;
+            // villa.Sqft = request.Sqft;
+            // villa.Rate = request.Rate;
+            // villa.ImageUrl = request.ImageUrl;
+            // villa.Amenity = request.Amenity; 
             
-            _db.Villas.Update(villa);
+            _db.Villas.Update(villaupdate);
             await _db.SaveChangesAsync();
 
             return NoContent();
@@ -145,7 +156,7 @@ namespace RESTAPIProject.Controllers.VillaController
         [ProducesResponseType(404)]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
-        public async Task<IActionResult> PatchVilla(int id, [FromBody] JsonPatchDocument<CreateVillaRequest> patchDoc)
+        public async Task<IActionResult> PatchVilla(int id, [FromBody] JsonPatchDocument<UpdateVillaRequest> patchDoc)
         {
             if (patchDoc == null)
             {
@@ -157,35 +168,39 @@ namespace RESTAPIProject.Controllers.VillaController
                 return NotFound($"ID: {id} not found");
             }
 
-            CreateVillaRequest model = new()
-            {
-                Name = villa.Name,
-                Details = villa.Details,
-                Occupancy = villa.Occupancy,
-                Sqft = villa.Sqft,
-                Rate = villa.Rate,
-                ImageUrl = villa.ImageUrl,
-                Amenity = villa.Amenity
-            };
+            UpdateVillaRequest villapatch = _mapper.Map<UpdateVillaRequest>(villa);
+
+            // UpdateVillaRequest model = new()
+            // {
+            //     Name = villa.Name,
+            //     Details = villa.Details,
+            //     Occupancy = villa.Occupancy,
+            //     Sqft = villa.Sqft,
+            //     Rate = villa.Rate,
+            //     ImageUrl = villa.ImageUrl,
+            //     Amenity = villa.Amenity
+            // };
             // var patchVilla = new CreateVillaRequest {
             //     Name = villaId.Name,
             //     Occupancy = villaId.Occupancy
             // };
 
 
-            patchDoc.ApplyTo(model, ModelState);
-            if (!TryValidateModel(model))
+            patchDoc.ApplyTo(villapatch, ModelState);
+            if (!TryValidateModel(villapatch))
             {
                 return BadRequest(ModelState);
             }
 
-            villa.Name = model.Name ?? villa.Name;
-            villa.Details = model.Details ?? villa.Details;
-            villa.Occupancy = model.Occupancy ?? villa.Occupancy;
-            villa.Sqft = model.Sqft ?? villa.Sqft;
-            villa.Rate = model.Rate ?? villa.Rate;
-            villa.ImageUrl = model.ImageUrl ?? villa.ImageUrl;
-            villa.Amenity = model.Amenity ?? villa.Amenity;
+            Villa villaconvert = _mapper.Map<Villa>(villapatch);
+
+            // villa.Name = model.Name ?? villa.Name;
+            // villa.Details = model.Details ?? villa.Details;
+            // villa.Occupancy = model.Occupancy ?? villa.Occupancy;
+            // villa.Sqft = model.Sqft ?? villa.Sqft;
+            // villa.Rate = model.Rate ?? villa.Rate;
+            // villa.ImageUrl = model.ImageUrl ?? villa.ImageUrl;
+            // villa.Amenity = model.Amenity ?? villa.Amenity;
 
             try
             {

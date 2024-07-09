@@ -1,0 +1,9 @@
+*.dll
+*.exe
+*.pdb
+*.http
+*.props
+*.targets
+*.cache
+*.Up2Date
+*.editorconfig
