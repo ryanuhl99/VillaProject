@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using RESTAPIProject.Data.ApplicationDbContext;
 
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDbContext>(
@@ -33,6 +34,13 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Api V1");
         c.RoutePrefix = string.Empty;
     });
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    await dbContext.Database.MigrateAsync();
+    await dbContext.SeedDataAsync();
 }
 
 app.UseHttpsRedirection();

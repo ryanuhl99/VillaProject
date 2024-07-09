@@ -17,8 +17,18 @@ namespace RESTAPIProject.Data.ApplicationDbContext
         {
             base.OnModelCreating(modelBuilder);
 
-            var villas = GenerateVilla(100);
-            modelBuilder.Entity<Villa>().HasData(villas);
+            // var villas = GenerateVilla(100);
+            // modelBuilder.Entity<Villa>().HasData(villas);
+        }
+
+        public async Task SeedDataAsync()
+        {
+            if (!await Villas.AnyAsync())
+            {
+                var villas = GenerateVilla(100);
+                await Villas.AddRangeAsync(villas);
+                await SaveChangesAsync();
+            }
         }
 
         private List<Villa> GenerateVilla(int count)
@@ -26,11 +36,10 @@ namespace RESTAPIProject.Data.ApplicationDbContext
             Random random = new Random();
             List<Villa> villas = new List<Villa>();
 
-            for (int i = 1; i < count; i++)
+            for (int i = 0; i < count; i++)
             {
                 villas.Add(new Villa
                 {
-                    Id = -i,
                     Name = GenerateName(random),
                     Details = GenerateDescription(random),
                     Rate = Math.Round(random.NextDouble() * 900 + 100, 2),
