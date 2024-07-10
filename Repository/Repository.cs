@@ -17,7 +17,7 @@ namespace RESTAPIProject.Repository.Repository
             this._dbSet = _db.Set<T>();
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>>? filter = null)
+        public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> filter = null)
         {
             IQueryable<T> query = _dbSet;
 
@@ -41,7 +41,7 @@ namespace RESTAPIProject.Repository.Repository
         }
 
 
-        public async Task RemoveAsync(T entity)
+        public Task RemoveAsync(T entity)
         {
             _dbSet.Remove(entity);
             return Task.CompletedTask;
@@ -49,7 +49,7 @@ namespace RESTAPIProject.Repository.Repository
 
         public async Task SaveAsync()
         {
-            await _dbSet.SaveChangesAsync();
+            await _db.SaveChangesAsync();
         }
     }
 }

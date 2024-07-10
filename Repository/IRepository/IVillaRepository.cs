@@ -1,7 +1,7 @@
 using System.Linq.Expressions;
 using System.Collections.Generic;
 using RESTAPIProject.Models.Villa;
-using RESTAPIProject.Repository.IRepository.IRepository
+using RESTAPIProject.Repository.IRepository.IRepository;
 
 namespace RESTAPIProject.Repository.IRepository.IVillaRepository
 {

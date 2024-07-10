@@ -7,6 +7,8 @@ using RESTAPIProject.Data.ApplicationDbContext;
 using RESTAPIProject.MappingConfig;
 using RESTAPIProject.Repository.IRepository;
 using RESTAPIProject.Repository.Repository;
+using RESTAPIProject.Repository.VillaRepository;
+using RESTAPIProject.Repository.IRepository.IVillaRepository;
 
 
 

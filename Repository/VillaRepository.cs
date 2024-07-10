@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using System.Collections.Generic;
 using RESTAPIProject.Models.Villa;
+using RESTAPIProject.Repository.Repository;
+using RESTAPIProject.Repository.IRepository.IVillaRepository;
 
 namespace RESTAPIProject.Repository.VillaRepository
 {
