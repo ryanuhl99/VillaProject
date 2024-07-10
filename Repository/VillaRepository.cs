@@ -1,0 +1,33 @@
+using RESTAPIProject.Repository.IRepository;
+using RESTAPIProject.Data.ApplicationDbContext;
+using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
+using System.Collections.Generic;
+using RESTAPIProject.Models.Villa;
+
+namespace RESTAPIProject.Repository.VillaRepository
+{
+    public class VillaRepository : Repository<Villa>, IVillaRepository
+    {
+        private readonly ApplicationDbContext _db;
+        public VillaRepository(ApplicationDbContext db)
+        {
+            _db = db;
+        }
+
+        public async Task<IEnumerable<Villa>> GetByNameAsync(string name)
+        {
+            IQueryable<Villa> query = _db.Villas;
+            
+            query = query.Where(x => x.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+            
+            return await query.ToListAsync();
+        }
+
+
+        public async Task UpdateAsync(Villa entity)
+        {
+            _db.Villas.Update(entity);
+        }
+    }
+}

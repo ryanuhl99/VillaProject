@@ -7,17 +7,19 @@ using RESTAPIProject.Models.Villa;
 
 namespace RESTAPIProject.Repository.Repository
 {
-    public class VillaRepository : IVillaRepository
+    public class Repository<T> : IRepository<T> where T : class
     {
         private readonly ApplicationDbContext _db;
-        public VillaRepository(ApplicationDbContext db)
+        internal DbSet<T> _dbSet;
+        public Repository(ApplicationDbContext db)
         {
             _db = db;
+            this._dbSet = _db.Set<T>();
         }
 
-        public async Task<List<Villa>> GetAllAsync(Expression<Func<Villa, bool>> filter = null)
+        public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> filter = null)
         {
-            IQueryable<Villa> query = _db.Villas;
+            IQueryable<T> query = _dbSet;
 
             if (filter != null)
             {
@@ -27,39 +29,27 @@ namespace RESTAPIProject.Repository.Repository
             return await query.ToListAsync();
         }
 
-        public async Task<Villa> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
-            return await _db.Villas.FindAsync(id);
+            return await _dbSet.FindAsync(id);
         }
 
-        public async Task<IEnumerable<Villa>> GetByNameAsync(string name)
+
+        public async Task CreateAsync(T entity)
         {
-            IQueryable<Villa> query = _db.Villas;
-            
-            query = query.Where(x => x.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
-            
-            return await query.ToListAsync();
+            await _dbSet.AddAsync(entity);
         }
 
-        public async Task CreateAsync(Villa entity)
-        {
-            await _db.Villas.AddAsync(entity);
-        }
 
-        public async Task UpdateAsync(Villa entity)
+        public Task RemoveAsync(T entity)
         {
-            _db.Villas.Update(entity);
-        }
-
-        public Task RemoveAsync(Villa entity)
-        {
-            _db.Villas.Remove(entity);
+            _dbSet.Remove(entity);
             return Task.CompletedTask;
         }
 
         public async Task SaveAsync()
         {
-            await _db.SaveChangesAsync();
+            await _dbSet.SaveChangesAsync();
         }
     }
 }

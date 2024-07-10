@@ -11,8 +11,8 @@ using RESTAPIProject.Models.Villa;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using System.Collections.Generic;
-using RESTAPIProject.Repository.Repository;
-using RESTAPIProject.Repository.IRepository;
+using RESTAPIProject.Repository.VillaRepository;
+using RESTAPIProject.Repository.IRepository.IVillaRepository;
 
 namespace RESTAPIProject.Controllers.VillaController
 {   
