@@ -11,6 +11,8 @@ using RESTAPIProject.Models.Villa;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using System.Collections.Generic;
+using RESTAPIProject.Repository.Repository;
+using RESTAPIProject.Repository.IRepository;
 
 namespace RESTAPIProject.Controllers.VillaController
 {   
@@ -18,13 +20,13 @@ namespace RESTAPIProject.Controllers.VillaController
     [ApiController]
     public class VillaApiController : ControllerBase
     {
-        private readonly ApplicationDbContext _db;
+        private readonly IVillaRepository _dbVilla;
         private readonly ILogger<VillaApiController> _logger;
         private readonly IMapper _mapper;
-        public VillaApiController(ILogger<VillaApiController> logger, ApplicationDbContext db, IMapper mapper)
+        public VillaApiController(ILogger<VillaApiController> logger, IVillaRepository dbVilla, IMapper mapper)
         {
             _logger = logger;
-            _db = db;
+            _dbVilla = dbVilla;
             _mapper = mapper;
         } 
 
@@ -33,7 +35,7 @@ namespace RESTAPIProject.Controllers.VillaController
         public async Task<ActionResult<IEnumerable<VillaDTO>>> GetVillas()
         {
             _logger.LogInformation("Getting All Villas");
-            IEnumerable<Villa> villaList = await _db.Villas.ToListAsync();
+            IEnumerable<Villa> villaList = await _dbVilla.GetAllAsync();
             return Ok(_mapper.Map<List<VillaDTO>>(villaList));
         }
 
@@ -45,7 +47,7 @@ namespace RESTAPIProject.Controllers.VillaController
         {
             if (id.HasValue)
             {
-                var villa = await _db.Villas.FindAsync(id.Value);
+                var villa = await _dbVilla.GetByIdAsync(id.Value);
                 if (villa == null)
                 {
                     return NotFound();
@@ -54,9 +56,7 @@ namespace RESTAPIProject.Controllers.VillaController
             }
             else if (!string.IsNullOrEmpty(name))
             {
-                var villaName = await _db.Villas
-                    .Where(x => x.Name.Equals(name, StringComparison.OrdinalIgnoreCase))
-                    .ToListAsync();
+                var villaName = await _dbVilla.GetByNameAsync(name);
 
                 if (!villaName.Any())
                 {
@@ -80,27 +80,11 @@ namespace RESTAPIProject.Controllers.VillaController
             {
                 return BadRequest(ModelState);
             }
-            if (await _db.Villas.AnyAsync(x => x.Name.ToLower() == request.Name.ToLower()))
-            {
-                return Conflict(new { message = "This name already exists in the database" });
-            }
-                        
-            // int villaId = _db.Villas.Any() ? _db.Villas.Max(x => x.Id) + 1 : 1;
 
             Villa villacreate = _mapper.Map<Villa>(request);
-
-            // var newVilla = new Villa 
-            //     {   
-            //         Name=request.Name,
-            //         Details=request.Details,
-            //         Occupancy=request.Occupancy,
-            //         Sqft=request.Sqft,
-            //         Rate=request.Rate,
-            //         ImageUrl=request.ImageUrl,
-            //         Amenity=request.Amenity 
-            //     };
-            await _db.Villas.AddAsync(villacreate);
-            await _db.SaveChangesAsync();
+     
+            await _dbVilla.CreateAsync(villacreate);
+            await _dbVilla.SaveAsync();
 
             return CreatedAtRoute("Get Villa", new { id = villacreate.Id, name = villacreate.Name }, villacreate);        
         }
@@ -110,14 +94,14 @@ namespace RESTAPIProject.Controllers.VillaController
         [ProducesResponseType(204)]
         public async Task<IActionResult> DeleteVilla(int id)
         {
-            var villa = await _db.Villas.FindAsync(id);
+            var villa = await _dbVilla.GetByIdAsync(id);
             if (villa == null)
             {
                 return NotFound();
             }
 
-            _db.Villas.Remove(villa);
-            await _db.SaveChangesAsync();
+            await _dbVilla.RemoveAsync(villa);
+            await _dbVilla.SaveAsync();
 
             return NoContent();
         }
@@ -127,7 +111,7 @@ namespace RESTAPIProject.Controllers.VillaController
         [ProducesResponseType(204)]
         public async Task<IActionResult> UpdateVilla(int id, [FromBody] UpdateVillaRequest request)
         {
-            var villa = await _db.Villas.FindAsync(id);
+            var villa = await _dbVilla.GetByIdAsync(id);
             if (villa == null)
             {
                 return NotFound($"ID: {id} not found");
@@ -138,16 +122,8 @@ namespace RESTAPIProject.Controllers.VillaController
 
             Villa villaupdate = _mapper.Map<Villa>(request);
 
-            // villa.Name = request.Name;
-            // villa.Details = request.Details;
-            // villa.Occupancy = request.Occupancy;
-            // villa.Sqft = request.Sqft;
-            // villa.Rate = request.Rate;
-            // villa.ImageUrl = request.ImageUrl;
-            // villa.Amenity = request.Amenity; 
-            
-            _db.Villas.Update(villaupdate);
-            await _db.SaveChangesAsync();
+            await _dbVilla.UpdateAsync(villaupdate);
+            await _dbVilla.SaveAsync();
 
             return NoContent();
         }
@@ -162,28 +138,13 @@ namespace RESTAPIProject.Controllers.VillaController
             {
                 return BadRequest(ModelState);
             }
-            var villa = await _db.Villas.FindAsync(id);
+            var villa = await _dbVilla.GetByIdAsync(id);
             if (villa == null)
             {
                 return NotFound($"ID: {id} not found");
             }
 
             UpdateVillaRequest villapatch = _mapper.Map<UpdateVillaRequest>(villa);
-
-            // UpdateVillaRequest model = new()
-            // {
-            //     Name = villa.Name,
-            //     Details = villa.Details,
-            //     Occupancy = villa.Occupancy,
-            //     Sqft = villa.Sqft,
-            //     Rate = villa.Rate,
-            //     ImageUrl = villa.ImageUrl,
-            //     Amenity = villa.Amenity
-            // };
-            // var patchVilla = new CreateVillaRequest {
-            //     Name = villaId.Name,
-            //     Occupancy = villaId.Occupancy
-            // };
 
 
             patchDoc.ApplyTo(villapatch, ModelState);
@@ -194,17 +155,11 @@ namespace RESTAPIProject.Controllers.VillaController
 
             Villa villaconvert = _mapper.Map<Villa>(villapatch);
 
-            // villa.Name = model.Name ?? villa.Name;
-            // villa.Details = model.Details ?? villa.Details;
-            // villa.Occupancy = model.Occupancy ?? villa.Occupancy;
-            // villa.Sqft = model.Sqft ?? villa.Sqft;
-            // villa.Rate = model.Rate ?? villa.Rate;
-            // villa.ImageUrl = model.ImageUrl ?? villa.ImageUrl;
-            // villa.Amenity = model.Amenity ?? villa.Amenity;
-
+            await _dbVilla.UpdateAsync(villaconvert);
+   
             try
             {
-                await _db.SaveChangesAsync();
+                await _dbVilla.SaveAsync();
             }
             catch (DbUpdateConcurrencyException)
             {

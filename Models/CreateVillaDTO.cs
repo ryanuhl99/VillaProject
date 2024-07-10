@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using RESTAPIProject.Validation.ValidationAttributes;
+using Microsoft.EntityFrameworkCore;
 
 namespace RESTAPIProject.Models.CreateVillaDTO
 {

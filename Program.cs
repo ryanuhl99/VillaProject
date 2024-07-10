@@ -5,6 +5,8 @@ using Serilog.Events;
 using Microsoft.EntityFrameworkCore;
 using RESTAPIProject.Data.ApplicationDbContext;
 using RESTAPIProject.MappingConfig;
+using RESTAPIProject.Repository.IRepository;
+using RESTAPIProject.Repository.Repository;
 
 
 
@@ -13,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDbContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultSQLConnection"))
 );
+builder.Services.AddScoped<IVillaRepository, VillaRepository>();
 builder.Services.AddAutoMapper(typeof(MappingConfig));
 
 Log.Logger = new LoggerConfiguration().MinimumLevel.Debug().WriteTo

@@ -19,10 +19,8 @@ namespace RESTAPIProject.Models.UpdateVillaDTO
         [MaxLength(30)]
         public string? Details { get; set; }
 
-        [Required]
         public double? Rate { get; set; }
 
-        [Required]
         [Range (1, int.MaxValue)]
         public int? Sqft { get; set; }
         public string? ImageUrl { get; set; }

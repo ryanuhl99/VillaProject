@@ -6,12 +6,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RESTAPIProject.Models.Villa
 {
+    [Index(nameof(Name), IsUnique = true)]
     public class Villa
     {
         [Required]
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int Id { get; set; } 
+
         [Required]
         public string? Name { get; set; }
         public string? Details { get; set; }
