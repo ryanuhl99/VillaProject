@@ -10,7 +10,7 @@ namespace RESTAPIProject.Repository.VillaRepository
     public class VillaRepository : Repository<Villa>, IVillaRepository
     {
         private readonly ApplicationDbContext _db;
-        public VillaRepository(ApplicationDbContext db)
+        public VillaRepository(ApplicationDbContext db) : base(db)
         {
             _db = db;
         }
@@ -27,6 +27,7 @@ namespace RESTAPIProject.Repository.VillaRepository
 
         public async Task UpdateAsync(Villa entity)
         {
+            entity.UpdatedDate = DateTime.Now;
             _db.Villas.Update(entity);
         }
     }

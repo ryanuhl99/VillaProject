@@ -1,4 +1,4 @@
-using RESTAPIProject.Repository.IRepository;
+using RESTAPIProject.Repository.IRepository.IRepository;
 using RESTAPIProject.Data.ApplicationDbContext;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
@@ -17,7 +17,7 @@ namespace RESTAPIProject.Repository.Repository
             this._dbSet = _db.Set<T>();
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> filter = null)
+        public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>>? filter = null)
         {
             IQueryable<T> query = _dbSet;
 
@@ -41,7 +41,7 @@ namespace RESTAPIProject.Repository.Repository
         }
 
 
-        public Task RemoveAsync(T entity)
+        public async Task RemoveAsync(T entity)
         {
             _dbSet.Remove(entity);
             return Task.CompletedTask;
