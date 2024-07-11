@@ -26,7 +26,7 @@ namespace RESTAPIProject.Repository.Repository
                 query = query.Where(filter);
             }
 
-            return await query.ToListAsync();
+            return await query.AsNoTracking().ToListAsync();
         }
 
         public async Task<T> GetByIdAsync(int id)

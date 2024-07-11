@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using RESTAPIProject.Repository.VillaRepository;
 using RESTAPIProject.Repository.IRepository.IVillaRepository;
 using RESTAPIProject.Models.APIResponse;
+using System.Net;
 
 namespace RESTAPIProject.Controllers.VillaController
 {   
@@ -30,26 +31,29 @@ namespace RESTAPIProject.Controllers.VillaController
             _logger = logger;
             _dbVilla = dbVilla;
             _mapper = mapper;
-            this._response = new();
+            this._response = new APIResponse();
         } 
 
         [HttpGet]
         [ProducesResponseType(200)]
-        public async Task<ActionResult<IEnumerable<APIResponse>>> GetVillas()
+        [ProducesResponseType(500)]
+        public async Task<ActionResult<APIResponse>> GetVillas()
         {
             try 
             {
                 _logger.LogInformation("Getting All Villas");
                 IEnumerable<Villa> villaList = await _dbVilla.GetAllAsync();
 
-                _response.StatusCode = HttpStatusCode.Ok;
-                _response.Result = _mapper.Map<List<VillaDTO>>(villaList) 
+                _response.StatusCode = HttpStatusCode.OK;
+                _response.Result = _mapper.Map<List<VillaDTO>>(villaList); 
                 return Ok(_response);
             }
             catch (Exception ex)
             {
-                _result.IsSuccess = false;
-                _result.ErrorMessages = new List<string>() { ex.ToString };
+                _response.StatusCode = HttpStatusCode.InternalServerError;
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>() { ex.ToString() };
+                return StatusCode((int)HttpStatusCode.InternalServerError, _response);
             }
         }
 
@@ -66,10 +70,12 @@ namespace RESTAPIProject.Controllers.VillaController
                     var villa = await _dbVilla.GetByIdAsync(id.Value);
                     if (villa == null)
                     {
-                        return NotFound();
+                        _response.StatusCode = HttpStatusCode.NotFound;
+                        _response.IsSuccess = false;
+                        return NotFound(_response);
                     }
                     _response.Result = _mapper.Map<VillaDTO>(villa);
-                    _response.StatusCode = HttpStatusCode.Ok;
+                    _response.StatusCode = HttpStatusCode.OK;
                     return Ok(_response);
                 }
                 else if (!string.IsNullOrEmpty(name))
@@ -78,21 +84,28 @@ namespace RESTAPIProject.Controllers.VillaController
 
                     if (!villaName.Any())
                     {
-                        return NotFound();
+                        _response.StatusCode = HttpStatusCode.NotFound;
+                        _response.IsSuccess = false;
+                        return NotFound(_response);
                     }
                     _response.Result = _mapper.Map<VillaDTO>(villaName);
-                    _response.StatusCode = HttpStatusCode.Ok;
+                    _response.StatusCode = HttpStatusCode.OK;
                     return Ok(_response);
                 }
                 else
                 {
-                    return BadRequest("Must enter valid Id or Name");
+                    _response.StatusCode = HttpStatusCode.BadRequest;
+                    _response.IsSuccess = false;
+                    _response.ErrorMessages = new List<string> { "Must enter valid Id or Name" };
+                    return BadRequest(_response);
                 }
             }
             catch (Exception ex)
             {
-                _result.IsSuccess = false;
-                _result.ErrorMessages = new List<string>() { ex.ToString() };
+                _response.StatusCode = HttpStatusCode.InternalServerError;
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>() { ex.ToString() };
+                return StatusCode((int)HttpStatusCode.InternalServerError, _response);
             }
         }
 
@@ -105,7 +118,9 @@ namespace RESTAPIProject.Controllers.VillaController
             {
                 if (!ModelState.IsValid)
                 {
-                    return BadRequest(ModelState);
+                    _response.StatusCode = HttpStatusCode.BadRequest;
+                    _response.IsSuccess = false;
+                    return BadRequest(_response);
                 }
 
                 Villa villacreate = _mapper.Map<Villa>(request);
@@ -120,8 +135,10 @@ namespace RESTAPIProject.Controllers.VillaController
             }
             catch (Exception ex)
             {
-                _result.IsSuccess = false;
-                _result.ErrorMessages = new List<string>() { ex.ToString() };
+                _response.StatusCode = HttpStatusCode.InternalServerError;
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>() { ex.ToString() };
+                return StatusCode((int)HttpStatusCode.InternalServerError, _response);
             }
         }
 
@@ -135,7 +152,8 @@ namespace RESTAPIProject.Controllers.VillaController
                 var villa = await _dbVilla.GetByIdAsync(id);
                 if (villa == null)
                 {
-                    return NotFound();
+                    _response.StatusCode = HttpStatusCode.NotFound;
+                    return NotFound(_response);
                 }
 
                 await _dbVilla.RemoveAsync(villa);
@@ -148,22 +166,27 @@ namespace RESTAPIProject.Controllers.VillaController
             }
             catch (Exception ex)
             {
+                _response.StatusCode = HttpStatusCode.InternalServerError;
                 _response.IsSuccess = false;
                 _response.ErrorMessages = new List<string>() { ex.ToString() };
+                return StatusCode((int)HttpStatusCode.InternalServerError, _response);
             }
         }
 
         [HttpPut("{id}", Name = "Update Villa")]
         [ProducesResponseType(404)]
         [ProducesResponseType(204)]
-        public async Task<IActionResult<APIResponse>> UpdateVilla(int id, [FromBody] UpdateVillaRequest request)
+        public async Task<ActionResult<APIResponse>> UpdateVilla(int id, [FromBody] UpdateVillaRequest request)
         {
             try
             {
                 var villa = await _dbVilla.GetByIdAsync(id);
                 if (villa == null)
                 {
-                    return NotFound($"ID: {id} not found");
+                    _response.StatusCode = HttpStatusCode.NotFound;
+                    _response.IsSuccess = false;
+                    _response.ErrorMessages = new List<string>() { $"ID: {id} not found" };
+                    return NotFound(_response);
                 }
 
                 Villa villaupdate = _mapper.Map<Villa>(request);
@@ -172,14 +195,16 @@ namespace RESTAPIProject.Controllers.VillaController
                 await _dbVilla.SaveAsync();
 
                 _response.IsSuccess = true;
-                _return.StatusCode = HttpStatusCode.NoContent;
+                _response.StatusCode = HttpStatusCode.NoContent;
 
                 return Ok(_response);
             }
             catch (Exception ex)
             {
+                _response.StatusCode = HttpStatusCode.InternalServerError;
                 _response.IsSuccess = false;
                 _response.ErrorMessages = new List<string>() { ex.ToString() };
+                return StatusCode((int)HttpStatusCode.InternalServerError, _response);
             }
         }
 
