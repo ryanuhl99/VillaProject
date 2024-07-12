@@ -12,6 +12,7 @@ namespace RESTAPIProject.Data.ApplicationDbContext
             {
             }
         public DbSet<Villa> Villas { get; set; }
+        public DbSet<VillaNumber> VillaNumbers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -28,6 +29,16 @@ namespace RESTAPIProject.Data.ApplicationDbContext
                 var villas = GenerateVilla(100);
                 await Villas.AddRangeAsync(villas);
                 await SaveChangesAsync();
+            }
+        }
+
+        public async Task SeedVillaNumberDataAsync()
+        {
+            if (!await VillaNumbers.AnyAsync())
+            {
+                var villaNumber = GenerateVillaNumber(100);
+                await VillaNumbers.AddRangeAsync(villaNumber);
+                await SaveChangesAsync();    
             }
         }
 
@@ -54,6 +65,38 @@ namespace RESTAPIProject.Data.ApplicationDbContext
             return villas;
         }
 
+        private List<VillaNumber> GenerateVillaNumber(int count)
+        {
+            List<VillaNumber> villaNumbers = new List<VillaNumber>();
+
+            string[] details = new[] 
+            {
+                "Three-Story, Spiral Staircase",
+                "Two-Story, Fruit Trees",
+                "Ocean View, Ample Closet Space",
+                "Forest View, Jacuzzi Tub",
+                "Backyard, Garden",
+                "Basement, Garden",
+                "Ample Closet Space, Ocean View",
+                "ADA Compliant, Balcony",
+                "Jacuzzi Tub, Infinity Pool",
+                "Air Conditioning, Pool"
+            };
+
+            for (int i = 100; i < count; i++)
+            {
+                villaNumber.Add(new VillaNumber 
+                {
+                    VillaNo = i,
+                    SpecialDetails = GenerateSpecialDetails(details),
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = null
+                });
+            }
+
+            return villaNumber;
+        }
+
         private string GenerateName(Random random)
         {
             int length = random.Next(2, 8);
@@ -68,6 +111,14 @@ namespace RESTAPIProject.Data.ApplicationDbContext
             var description = new string(Enumerable.Repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ ", length)
                             .Select(x => x[random.Next(x.Length)]).ToArray());
             return description;
+        }
+
+
+        private string GenerateSpecialDetails(string[] details)
+        {
+            Random random = new Random();
+            int index = random.Next(details.Length);
+            return details[index];
         }
     }
 }

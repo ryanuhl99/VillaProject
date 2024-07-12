@@ -16,6 +16,13 @@ namespace RESTAPIProject.MappingConfig
             CreateMap<Villa, VillaDTO>().ReverseMap();
             CreateMap<VillaDTO, CreateVillaRequest>().ReverseMap();
             CreateMap<VillaDTO, UpdateVillaRequest>().ReverseMap();
+
+            CreateMap<VillaNumber, VillaNumberDTO>().ReverseMap();
+            CreateMap<VillaNumber, CreateVillaNumberDTO>().ReverseMap();
+            CreateMap<VillaNumber, UpdateVillaNumberDTO>().ReverseMap();
+            CreateMap<VillaNumberDTO, CreateVillaNumberDTO>().ReverseMap();
+            CreateMap<VillaNumberDTO, UpdateVillaNumberDTO>().ReverseMap();
+            CreateMap<CreateVillaNumberDTO, UpdateVillaNumberDTO>().ReverseMap();
         }
     }
 }

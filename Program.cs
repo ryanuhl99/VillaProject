@@ -18,6 +18,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultSQLConnection"))
 );
 builder.Services.AddScoped<IVillaRepository, VillaRepository>();
+builder.Services.AddScoped<IVillaNumberRepository, VillaNumberRepository>();
 builder.Services.AddAutoMapper(typeof(MappingConfig));
 
 Log.Logger = new LoggerConfiguration().MinimumLevel.Debug().WriteTo
@@ -48,6 +49,7 @@ using (var scope = app.Services.CreateScope())
     var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     await dbContext.Database.MigrateAsync();
     await dbContext.SeedDataAsync();
+    await dbContext.SeedVillaNumberDataAsync();
 }
 
 app.UseHttpsRedirection();
