@@ -17,7 +17,7 @@ namespace RESTAPIProject.Controllers.VillaNumberController
             this._response = new APIResponse();
         }
 
-        [HttpGet(Name = "Get All")]
+        [HttpGet(Name = "Get All Villa Numbers")]
         [ProducesResponseType(200)]
         [ProducesResponseType(500)]
         public async Task<ActionResult<APIResponse>> GetVillaNumbers()
@@ -39,7 +39,7 @@ namespace RESTAPIProject.Controllers.VillaNumberController
             }
         }
 
-        [HttpGet("ByNumOrDetails", Name = "Get By Number or Details")]
+        [HttpGet("ByNumOrDetails", Name = "Get By Number or Detail")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
@@ -54,7 +54,7 @@ namespace RESTAPIProject.Controllers.VillaNumberController
                     {
                         _response.StatusCode = HttpStatusCode.NotFound;
                         _response.IsSuccess = false;
-                        _response.ErrorMessages = new List<string>() { $" Villa number is not found."};
+                        _response.ErrorMessages = new List<string>() { $"Villa number is not found."};
                         return StatusCode((int)HttpStatusCode.NotFound, _response);
                     }
 
@@ -93,11 +93,81 @@ namespace RESTAPIProject.Controllers.VillaNumberController
 
         [HttpPost(Name = "Create Villa Number")]
         [ProducesResponseType(201)]
-        [ProducesResponseType(409)]
+        [ProducesResponseType(400)]
         [ProducesResponseType(500)]
-        public async Task<ActionResult<APIResponse>> CreateVillaNumber([FromBody] VillaNumber villanum)
+        public async Task<ActionResult<APIResponse>> CreateVillaNumber([FromBody] CreatedVillaNumberDTO villanum)
         {
-            
+            try
+            {
+                if (!Model.IsValid)
+                {
+                    _response.IsSuccess = false;
+                    _response.StatusCode = HttpStatusCode.BadRequest;
+                    return StatusCode((int)HttpStatusCode.BadRequest, _response);
+                }
+
+                VillaNumber villamapped = _mapper.Map<VillaNumber>(villanum);
+                await _dbNumber.CreateAsync(villamapped);
+                await _dbNumber.SaveAsync();
+                _response.StatusCode = HttpStatusCode.Created;
+                return StatusCode((int)HttpStatusCode.Created, _response);
+            }
+
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.StatusCode = HttpStatusCode.InternalServerError;
+                _response.ErrorMessages = new List<string>() { ex.ToString() };
+                return StatusCode((int)HttpStatusCode.InternalServerError, _response);
+            }
+        }
+
+        [HttpDelete("{villano}", Name = "Delete Villa Number")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
+        public async Task<ActionResult<APIResponse>> DeleteVillaNumber(int number)
+        {
+            try
+            {
+                var villanum = await _dbNumber.GetByIdAsync(number);
+                if (villanum == null)
+                {
+                    _response.IsSuccess = false;
+                    _response.StatusCode = HttpStatusCode.NotFound;
+                    return StatusCode((int)HttpStatusCode.NotFound, _response);
+                }
+
+                await _dbNumber.RemoveAsync(villanum);
+                await _dbNumber.SaveAsync();
+
+                _response.StatusCode = HttpStatusCode.NoContent;
+                return StatusCode((int)HttpStatusCode.NoContent, _response);
+            }
+
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.StatusCode = HttpStatusCode.InternalServerError;
+                _response.ErrorMessages = new List<string>() { ex.ToString() };
+                return StatusCode((int)HttpStatusCode.InternalServerError, _response);
+            }
+        }
+
+        [HttpPut("villano", Name = "Update Villa Number")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
+        public async Task<ActionResult<APIResponse>> UpdateVillaNumber(int number, [FromBody] UpdatedVillaNumberDTO villanum)
+        {
+            var villanumber = await _dbNumber.GetByIdAsync(number);
+            if (villanumber == null)
+            {
+                _response.IsSuccess = false;
+                _response.StatusCode = HttpStatusCode.NotFound;
+                return StatusCode((int)HttpStatusCode.NotFound, _response);
+            }
         }
     }
 }

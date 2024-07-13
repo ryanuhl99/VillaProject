@@ -111,7 +111,7 @@ namespace RESTAPIProject.Controllers.VillaController
 
         [HttpPost(Name = "Create Villa")]
         [ProducesResponseType(201)]
-        [ProducesResponseType(409)]
+        [ProducesResponseType(400)]
         public async Task<ActionResult<APIResponse>> CreateVilla([FromBody] CreateVillaRequest request)
         {
             try
