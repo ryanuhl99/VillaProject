@@ -161,13 +161,38 @@ namespace RESTAPIProject.Controllers.VillaNumberController
         [ProducesResponseType(500)]
         public async Task<ActionResult<APIResponse>> UpdateVillaNumber(int number, [FromBody] UpdatedVillaNumberDTO villanum)
         {
-            var villanumber = await _dbNumber.GetByIdAsync(number);
-            if (villanumber == null)
+            try
+            {
+                var villanumber = await _dbNumber.GetByIdAsync(number);
+                if (villanumber == null)
+                {
+                    _response.IsSuccess = false;
+                    _response.StatusCode = HttpStatusCode.NotFound;
+                    return StatusCode((int)HttpStatusCode.NotFound, _response);
+                }
+
+                if (!ModelState.IsValid)
+                {
+                    _response.IsSuccess = false;
+                    _response.StatusCode = HttpStatusCode.BadRequest;
+                    return StatusCode((int)HttpStatusCode.BadRequest, _response);
+                }
+
+                VillaNumber villamapped = _mapper.Map<VillaNumber>(villanum);
+                _dbNumber.UpdateNumberAsync(villamapped);
+                _dbNumber.SaveAsync();
+
+                _response.StatusCode = HttpStatusCode.NoContent;
+                return StatusCode((int)HttpResponseStatus.NoContent, _response);
+            }
+
+            catch (Exception ex)
             {
                 _response.IsSuccess = false;
-                _response.StatusCode = HttpStatusCode.NotFound;
-                return StatusCode((int)HttpStatusCode.NotFound, _response);
-            }
+                _response.StatusCode = HttpStatusCode.InternalServerError;
+                _response.ErrorMessages = new List<string>() { ex.ToString() };
+                return StatusCode((int)HttpStatusCode.InternalServerError, _response);
+            }    
         }
     }
 }

@@ -176,6 +176,7 @@ namespace RESTAPIProject.Controllers.VillaController
         [HttpPut("{id}", Name = "Update Villa")]
         [ProducesResponseType(404)]
         [ProducesResponseType(204)]
+        [ProducesResponseType(500)]
         public async Task<ActionResult<APIResponse>> UpdateVilla(int id, [FromBody] UpdateVillaRequest request)
         {
             try

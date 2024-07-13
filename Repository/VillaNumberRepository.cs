@@ -25,7 +25,7 @@ namespace RESTAPIProject.Repository.VillaRepository
         }
 
 
-        public async Task UpdateAsync(VillaNumber entity)
+        public async Task UpdateNumberAsync(VillaNumber entity)
         {
             entity.UpdatedDate = DateTime.Now;
             _db.VillaNumbers.Update(entity);
