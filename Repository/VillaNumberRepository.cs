@@ -12,7 +12,7 @@ namespace RESTAPIProject.Repository.VillaRepository
     public class VillaNumberRepository : Repository<VillaNumber>, IVillaNumberRepository
     {
         private readonly ApplicationDbContext _db;
-        public VillaRepository(ApplicationDbContext db) : base(db)
+        public VillaNumberRepository(ApplicationDbContext db) : base(db)
         {
             _db = db;
         }

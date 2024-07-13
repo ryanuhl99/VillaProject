@@ -1,4 +1,16 @@
-
+using Microsoft.AspNetCore.Mvc;
+using RESTAPIProject.Models.VillaNumberDTO;
+using RESTAPIProject.Models.CreatedVillaNumberDTO;
+using RESTAPIProject.Models.UpdatedVillaNumberDTO;
+using RESTAPIProject.Data.ApplicationDbContext;
+using RESTAPIProject.Models.VillaNumber;
+using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using System.Collections.Generic;
+using RESTAPIProject.Repository.VillaNumberRepository;
+using RESTAPIProject.Repository.IRepository.IVillaNumberRepository;
+using RESTAPIProject.Models.APIResponse;
+using System.Net;
 
 namespace RESTAPIProject.Controllers.VillaNumberController
 {
@@ -43,13 +55,13 @@ namespace RESTAPIProject.Controllers.VillaNumberController
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public async Task<ActionResult<APIResponse>> GetByNumOrDetails([FromQuery] int? number, [FromQuery] string? detail)
+        public async Task<ActionResult<APIResponse>> GetByNumOrDetails([FromQuery] int? villano, [FromQuery] string? detail)
         {
             try
             {
-                if (number.HasValue)
+                if (villano.HasValue)
                 {
-                    var villaNum = await _dbNumber.GetByIdAsync(number.Value);
+                    var villaNum = await _dbNumber.GetByIdAsync(villano.Value);
                     if (villaNum == null)
                     {
                         _response.StatusCode = HttpStatusCode.NotFound;
@@ -75,7 +87,7 @@ namespace RESTAPIProject.Controllers.VillaNumberController
                         return StatusCode((int)HttpStatusCode.NotFound, _response); 
                     }
 
-                    VillaNumberDTO villaDetailDTO = _mapper.Map<VoillaNumberDTO>(villaDetail);
+                    VillaNumberDTO villaDetailDTO = _mapper.Map<VillaNumberDTO>(villaDetail);
                     _response.StatusCode = HttpStatusCode.OK;
                     _response.Result = villaDetailDTO;
                     return StatusCode((int)HttpStatusCode.OK, _response);
@@ -99,7 +111,7 @@ namespace RESTAPIProject.Controllers.VillaNumberController
         {
             try
             {
-                if (!Model.IsValid)
+                if (!ModelState.IsValid)
                 {
                     _response.IsSuccess = false;
                     _response.StatusCode = HttpStatusCode.BadRequest;
@@ -154,7 +166,7 @@ namespace RESTAPIProject.Controllers.VillaNumberController
             }
         }
 
-        [HttpPut("villano", Name = "Update Villa Number")]
+        [HttpPut("{villano}", Name = "Update Villa Number")]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]

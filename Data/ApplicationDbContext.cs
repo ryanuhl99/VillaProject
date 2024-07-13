@@ -36,8 +36,8 @@ namespace RESTAPIProject.Data.ApplicationDbContext
         {
             if (!await VillaNumbers.AnyAsync())
             {
-                var villaNumber = GenerateVillaNumber(100);
-                await VillaNumbers.AddRangeAsync(villaNumber);
+                var villaNumbersGenerated = GenerateVillaNumber(100);
+                await VillaNumbers.AddRangeAsync(villaNumbersGenerated);
                 await SaveChangesAsync();    
             }
         }
@@ -85,7 +85,7 @@ namespace RESTAPIProject.Data.ApplicationDbContext
 
             for (int i = 100; i < count; i++)
             {
-                villaNumber.Add(new VillaNumber 
+                villaNumbers.Add(new VillaNumber 
                 {
                     VillaNo = i,
                     SpecialDetails = GenerateSpecialDetails(details),
@@ -94,7 +94,7 @@ namespace RESTAPIProject.Data.ApplicationDbContext
                 });
             }
 
-            return villaNumber;
+            return villaNumbers;
         }
 
         private string GenerateName(Random random)
