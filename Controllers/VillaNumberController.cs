@@ -37,7 +37,7 @@ namespace RESTAPIProject.Controllers.VillaNumberController
             try
             {
                 IEnumerable<VillaNumber> villanum = await _dbNumber.GetAllAsync();
-                VillaNumberDTO villanumDTO = _mapper.Map<VillaNumberDTO>(villanum);
+                IEnumerable<VillaNumberDTO> villanumDTO = _mapper.Map<IEnumerable<VillaNumberDTO>>(villanum);
                 _response.StatusCode = HttpStatusCode.OK;
                 _response.Result = villanumDTO;
                 return StatusCode((int)HttpStatusCode.OK, _response);
@@ -143,11 +143,11 @@ namespace RESTAPIProject.Controllers.VillaNumberController
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public async Task<ActionResult<APIResponse>> DeleteVillaNumber(int number)
+        public async Task<ActionResult<APIResponse>> DeleteVillaNumber(int villano)
         {
             try
             {
-                var villanum = await _dbNumber.GetByIdAsync(number);
+                var villanum = await _dbNumber.GetByIdAsync(villano);
                 if (villanum == null)
                 {
                     _response.IsSuccess = false;
@@ -176,11 +176,11 @@ namespace RESTAPIProject.Controllers.VillaNumberController
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public async Task<ActionResult<APIResponse>> UpdateVillaNumber(int number, [FromBody] UpdatedVillaNumberDTO villanum)
+        public async Task<ActionResult<APIResponse>> UpdateVillaNumber(int villano, [FromBody] UpdatedVillaNumberDTO villanum)
         {
             try
             {
-                var villanumber = await _dbNumber.GetByIdAsync(number);
+                var villanumber = await _dbNumber.GetByIdAsync(villano);
                 if (villanumber == null)
                 {
                     _response.IsSuccess = false;

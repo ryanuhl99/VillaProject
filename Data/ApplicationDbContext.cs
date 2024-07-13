@@ -37,7 +37,7 @@ namespace RESTAPIProject.Data.ApplicationDbContext
         {
             if (!await VillaNumbers.AnyAsync())
             {
-                var villaNumbersGenerated = GenerateVillaNumber(100);
+                var villaNumbersGenerated = GenerateVillaNumber(100, 100);
                 await VillaNumbers.AddRangeAsync(villaNumbersGenerated);
                 await SaveChangesAsync();    
             }
@@ -66,7 +66,7 @@ namespace RESTAPIProject.Data.ApplicationDbContext
             return villas;
         }
 
-        private List<VillaNumber> GenerateVillaNumber(int count)
+        private List<VillaNumber> GenerateVillaNumber(int start, int count)
         {
             List<VillaNumber> villaNumbers = new List<VillaNumber>();
 
@@ -84,7 +84,7 @@ namespace RESTAPIProject.Data.ApplicationDbContext
                 "Air Conditioning, Pool"
             };
 
-            for (int i = 100; i < count; i++)
+            for (int i = start; i < start + count; i++)
             {
                 villaNumbers.Add(new VillaNumber 
                 {
