@@ -16,13 +16,13 @@ namespace RESTAPIProject.Controllers.VillaNumberController
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class VillaNumberController : BaseController
+    public class VillaNumberController : ControllerBase
     {
-        private readonly Imapper _mapper;
+        private readonly IMapper _mapper;
         private readonly IVillaNumberRepository _dbNumber;
         protected APIResponse _response;
 
-        public VillaNumberController(IVillaNumberRepository dbNumber, Imapper mapper)
+        public VillaNumberController(IVillaNumberRepository dbNumber, IMapper mapper)
         {
             _dbNumber = dbNumber;
             _mapper = mapper;
@@ -78,20 +78,25 @@ namespace RESTAPIProject.Controllers.VillaNumberController
 
                 if (!string.IsNullOrEmpty(detail))
                 {
-                    IEnumerable<VillaNumber> villaDetail = await _dbNumer.GetByDetailsKeywordAsync(detail);
+                    IEnumerable<VillaNumber> villaDetail = await _dbNumber.GetByDetailsKeywordAsync(detail);
                     if (villaDetail == null)
                     {
                         _response.StatusCode = HttpStatusCode.NotFound;
                         _response.IsSuccess = false;
-                        _response.ErrorMessages = new List<string>() { $"Villas with matching details are not found."};
+                        _response.ErrorMessages = new List<string>() { "Villas with matching details are not found." };
                         return StatusCode((int)HttpStatusCode.NotFound, _response); 
                     }
 
-                    VillaNumberDTO villaDetailDTO = _mapper.Map<VillaNumberDTO>(villaDetail);
+                    IEnumerable<VillaNumberDTO> villaDetailDTO = _mapper.Map<IEnumerable<VillaNumberDTO>>(villaDetail);
                     _response.StatusCode = HttpStatusCode.OK;
                     _response.Result = villaDetailDTO;
                     return StatusCode((int)HttpStatusCode.OK, _response);
                 }
+
+                _response.StatusCode = HttpStatusCode.BadRequest;
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>() { "Invalid parameters. Provide either villano or detail." };
+                return StatusCode((int)HttpStatusCode.BadRequest, _response);
             }
 
             catch (Exception ex)
@@ -191,11 +196,11 @@ namespace RESTAPIProject.Controllers.VillaNumberController
                 }
 
                 VillaNumber villamapped = _mapper.Map<VillaNumber>(villanum);
-                _dbNumber.UpdateNumberAsync(villamapped);
-                _dbNumber.SaveAsync();
+                await _dbNumber.UpdateNumberAsync(villamapped);
+                await _dbNumber.SaveAsync();
 
                 _response.StatusCode = HttpStatusCode.NoContent;
-                return StatusCode((int)HttpResponseStatus.NoContent, _response);
+                return StatusCode((int)HttpStatusCode.NoContent, _response);
             }
 
             catch (Exception ex)

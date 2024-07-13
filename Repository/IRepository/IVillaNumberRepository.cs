@@ -7,7 +7,7 @@ namespace RESTAPIProject.Repository.IRepository.IVillaNumberRepository
 {
     public interface IVillaNumberRepository : IRepository<VillaNumber>
     {
-        Task<IEnumerate<VillaNumber>> GetByDetailsKeywordAsync(string details);
+        Task<IEnumerable<VillaNumber>> GetByDetailsKeywordAsync(string details);
         Task UpdateNumberAsync(VillaNumber entity);
     }
 }

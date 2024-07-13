@@ -3,6 +3,10 @@ using RESTAPIProject.Models.CreateVillaDTO;
 using RESTAPIProject.Models.UpdateVillaDTO;
 using RESTAPIProject.Models.Villa;
 using RESTAPIProject.Models.VillaDTO;
+using RESTAPIProject.Models.VillaNumber;
+using RESTAPIProject.Models.VillaNumberDTO;
+using RESTAPIProject.Models.CreatedVillaNumberDTO;
+using RESTAPIProject.Models.UpdatedVillaNumberDTO;
 
 namespace RESTAPIProject.MappingConfig
 {
@@ -18,11 +22,11 @@ namespace RESTAPIProject.MappingConfig
             CreateMap<VillaDTO, UpdateVillaRequest>().ReverseMap();
 
             CreateMap<VillaNumber, VillaNumberDTO>().ReverseMap();
-            CreateMap<VillaNumber, CreateVillaNumberDTO>().ReverseMap();
-            CreateMap<VillaNumber, UpdateVillaNumberDTO>().ReverseMap();
-            CreateMap<VillaNumberDTO, CreateVillaNumberDTO>().ReverseMap();
-            CreateMap<VillaNumberDTO, UpdateVillaNumberDTO>().ReverseMap();
-            CreateMap<CreateVillaNumberDTO, UpdateVillaNumberDTO>().ReverseMap();
+            CreateMap<VillaNumber, CreatedVillaNumberDTO>().ReverseMap();
+            CreateMap<VillaNumber, UpdatedVillaNumberDTO>().ReverseMap();
+            CreateMap<VillaNumberDTO, CreatedVillaNumberDTO>().ReverseMap();
+            CreateMap<VillaNumberDTO, UpdatedVillaNumberDTO>().ReverseMap();
+            CreateMap<CreatedVillaNumberDTO, UpdatedVillaNumberDTO>().ReverseMap();
         }
     }
 }

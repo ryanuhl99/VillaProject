@@ -9,6 +9,8 @@ using RESTAPIProject.Repository.IRepository;
 using RESTAPIProject.Repository.Repository;
 using RESTAPIProject.Repository.VillaRepository;
 using RESTAPIProject.Repository.IRepository.IVillaRepository;
+using RESTAPIProject.Repository.IRepository.IVillaNumberRepository;
+using RESTAPIProject.Repository.VillaNumberRepository;
 
 
 

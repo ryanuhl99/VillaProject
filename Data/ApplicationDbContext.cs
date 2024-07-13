@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using RESTAPIProject.Models.Villa;
 using System.Collections.Generic;
+using RESTAPIProject.Models.VillaNumber;
 
 
 namespace RESTAPIProject.Data.ApplicationDbContext

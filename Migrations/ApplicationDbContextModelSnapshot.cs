@@ -44,15 +44,15 @@ namespace RESTAPIProject.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("Occupancy")
+                    b.Property<int>("Occupancy")
                         .HasColumnType("int");
 
-                    b.Property<double?>("Rate")
+                    b.Property<double>("Rate")
                         .HasColumnType("float");
 
-                    b.Property<int?>("Sqft")
+                    b.Property<int>("Sqft")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedDate")
@@ -60,7 +60,30 @@ namespace RESTAPIProject.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Name")
+                        .IsUnique();
+
                     b.ToTable("Villas");
+                });
+
+            modelBuilder.Entity("RESTAPIProject.Models.VillaNumber.VillaNumber", b =>
+                {
+                    b.Property<int>("VillaNo")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SpecialDetails")
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("VillaNo");
+
+                    b.ToTable("VillaNumbers");
                 });
 #pragma warning restore 612, 618
         }

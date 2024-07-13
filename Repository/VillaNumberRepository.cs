@@ -6,8 +6,9 @@ using System.Collections.Generic;
 using RESTAPIProject.Models.Villa;
 using RESTAPIProject.Repository.Repository;
 using RESTAPIProject.Repository.IRepository.IVillaNumberRepository;
+using RESTAPIProject.Models.VillaNumber;
 
-namespace RESTAPIProject.Repository.VillaRepository
+namespace RESTAPIProject.Repository.VillaNumberRepository
 {
     public class VillaNumberRepository : Repository<VillaNumber>, IVillaNumberRepository
     {
