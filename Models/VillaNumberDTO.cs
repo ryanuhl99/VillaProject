@@ -5,7 +5,6 @@ namespace RESTAPIProject.Models.VillaNumberDTO
 {
     public class VillaNumberDTO
     {
-        [Required]
         public int VillaNo { get; set; }
 
         [MaxLength(30)]

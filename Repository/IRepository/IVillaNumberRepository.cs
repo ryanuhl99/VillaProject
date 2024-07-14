@@ -9,5 +9,6 @@ namespace RESTAPIProject.Repository.IRepository.IVillaNumberRepository
     {
         Task<IEnumerable<VillaNumber>> GetByDetailsKeywordAsync(string details);
         Task UpdateNumberAsync(VillaNumber entity);
+        Task CreateNumberAsync(VillaNumber entity);
     }
 }

@@ -6,6 +6,7 @@ namespace RESTAPIProject.Models.VillaNumber
     public class VillaNumber
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Range(100, int.MaxValue)]
         public int VillaNo { get; set; }
 
         [MaxLength(30)]

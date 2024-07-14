@@ -124,10 +124,10 @@ namespace RESTAPIProject.Controllers.VillaNumberController
                 }
 
                 VillaNumber villamapped = _mapper.Map<VillaNumber>(villanum);
-                await _dbNumber.CreateAsync(villamapped);
+                await _dbNumber.CreateNumberAsync(villamapped);
                 await _dbNumber.SaveAsync();
                 _response.StatusCode = HttpStatusCode.Created;
-                return StatusCode((int)HttpStatusCode.Created, _response);
+                return CreatedAtRoute("Get By Number or Detail", new { villano = villamapped.VillaNo, details = villamapped.SpecialDetails }, _response);
             }
 
             catch (Exception ex)
@@ -158,8 +158,7 @@ namespace RESTAPIProject.Controllers.VillaNumberController
                 await _dbNumber.RemoveAsync(villanum);
                 await _dbNumber.SaveAsync();
 
-                _response.StatusCode = HttpStatusCode.NoContent;
-                return StatusCode((int)HttpStatusCode.NoContent, _response);
+                return NoContent();
             }
 
             catch (Exception ex)
@@ -195,12 +194,15 @@ namespace RESTAPIProject.Controllers.VillaNumberController
                     return StatusCode((int)HttpStatusCode.BadRequest, _response);
                 }
 
-                VillaNumber villamapped = _mapper.Map<VillaNumber>(villanum);
-                await _dbNumber.UpdateNumberAsync(villamapped);
+                _mapper.Map(villanum, villanumber);
+                villanumber.VillaNo = villano;
+                villanumber.UpdatedDate = DateTime.UtcNow;
+
+                await _dbNumber.UpdateNumberAsync(villanumber);
                 await _dbNumber.SaveAsync();
 
                 _response.StatusCode = HttpStatusCode.NoContent;
-                return StatusCode((int)HttpStatusCode.NoContent, _response);
+                return Ok(_response);
             }
 
             catch (Exception ex)

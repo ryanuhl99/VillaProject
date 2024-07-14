@@ -28,8 +28,19 @@ namespace RESTAPIProject.Repository.VillaNumberRepository
 
         public async Task UpdateNumberAsync(VillaNumber entity)
         {
-            entity.UpdatedDate = DateTime.Now;
             _db.VillaNumbers.Update(entity);
+        }
+
+        public async Task CreateNumberAsync(VillaNumber entity)
+        {
+            var lastvillanum = await _db.VillaNumbers.OrderByDescending(x => x.VillaNo)
+                                        .FirstOrDefaultAsync();
+
+            int lastindex = (lastvillanum?.VillaNo ?? 99) + 1;
+
+            entity.VillaNo = lastindex;
+
+            await _db.VillaNumbers.AddAsync(entity);                                        
         }
     }
 }
