@@ -11,5 +11,8 @@ namespace RESTAPIProject.Models.CreatedVillaNumberDTO
 
         public DateTime CreatedDate { get; set; } = DateTime.Now;
 
+        [Required]
+        public int VillaID { get; set; }
+
     }
 }

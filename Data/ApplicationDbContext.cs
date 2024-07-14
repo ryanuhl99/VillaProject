@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using RESTAPIProject.Models.Villa;
+using RESTAPIProject.Models.VillaClass;
 using System.Collections.Generic;
 using RESTAPIProject.Models.VillaNumber;
 
@@ -35,9 +35,15 @@ namespace RESTAPIProject.Data.ApplicationDbContext
 
         public async Task SeedVillaNumberDataAsync()
         {
+            var existingVillas = await Villas.ToListAsync();
+            if (!existingVillas.Any())
+            {
+                SeedDataAsync();
+                existingVillas = await Villas.ToListAsync();
+            }
             if (!await VillaNumbers.AnyAsync())
             {
-                var villaNumbersGenerated = GenerateVillaNumber(100, 100);
+                var villaNumbersGenerated = GenerateVillaNumber(100, 100, existingVillas);
                 await VillaNumbers.AddRangeAsync(villaNumbersGenerated);
                 await SaveChangesAsync();    
             }
@@ -66,7 +72,7 @@ namespace RESTAPIProject.Data.ApplicationDbContext
             return villas;
         }
 
-        private List<VillaNumber> GenerateVillaNumber(int start, int count)
+        private List<VillaNumber> GenerateVillaNumber(int start, int count, List<Villa> existingvillas)
         {
             List<VillaNumber> villaNumbers = new List<VillaNumber>();
 
@@ -84,14 +90,17 @@ namespace RESTAPIProject.Data.ApplicationDbContext
                 "Air Conditioning, Pool"
             };
 
+            Random random = new Random();
             for (int i = start; i < start + count; i++)
             {
+                var randomvilla = existingvillas[random.Next(existingvillas.Count)];
                 villaNumbers.Add(new VillaNumber 
                 {
                     VillaNo = i,
                     SpecialDetails = GenerateSpecialDetails(details),
                     CreatedDate = DateTime.Now,
-                    UpdatedDate = null
+                    UpdatedDate = null,
+                    VillaID = randomvilla.Id
                 });
             }
 

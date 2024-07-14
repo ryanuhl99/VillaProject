@@ -3,7 +3,7 @@ using RESTAPIProject.Data.ApplicationDbContext;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using System.Collections.Generic;
-using RESTAPIProject.Models.Villa;
+using RESTAPIProject.Models.VillaClass;
 
 namespace RESTAPIProject.Repository.Repository
 {

@@ -1,7 +1,7 @@
 using AutoMapper;
 using RESTAPIProject.Models.CreateVillaDTO;
 using RESTAPIProject.Models.UpdateVillaDTO;
-using RESTAPIProject.Models.Villa;
+using RESTAPIProject.Models.VillaClass;
 using RESTAPIProject.Models.VillaDTO;
 using RESTAPIProject.Models.VillaNumber;
 using RESTAPIProject.Models.VillaNumberDTO;

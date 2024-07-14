@@ -7,7 +7,7 @@ using RESTAPIProject.Models.CreateVillaDTO;
 using RESTAPIProject.Models.UpdateVillaDTO;
 using Microsoft.AspNetCore.JsonPatch;
 using RESTAPIProject.Data.ApplicationDbContext;
-using RESTAPIProject.Models.Villa;
+using RESTAPIProject.Models.VillaClass;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using System.Collections.Generic;

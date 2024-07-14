@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using RESTAPIProject.Validation.ValidationAttributes;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RESTAPIProject.Models.Villa
+namespace RESTAPIProject.Models.VillaClass
 {
     [Index(nameof(Name), IsUnique = true)]
     public class Villa

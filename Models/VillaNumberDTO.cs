@@ -10,5 +10,8 @@ namespace RESTAPIProject.Models.VillaNumberDTO
         [MaxLength(30)]
         public string SpecialDetails { get; set; }
 
+        [Required]
+        public int VillaID { get; set; }
+
     }
 }
